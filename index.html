@@ -63,13 +63,8 @@
                         <!-- Main Navigation -->
                         <nav id="navigation" class="style-1">
                             <ul id="responsive">
-                                <li><a href="index.html">Home</a>
-                                    <ul>
-                                        <li><a href="properties-grid-1.html">Listings</a></li>
-                                        <li><a href="agents-listing-grid.html">Agents</a></li>
-                                    </ul>
-                                </li>
-                                <li><a href="about.html">About</a></li>                       
+                                <li><a href="index.html">Home</a></li>                        
+                                <li><a href="about.html">About</a></li> 
                                 <li><a href="blog-grid-sidebar.html">Blog</a></li>
                                 <li><a href="contact-us.html">Contact</a></li>
                                 <li class="d-none d-xl-none d-block d-lg-block"><a href="login.html">Login</a></li>
@@ -150,11 +145,11 @@
                             <div class="hero-inner">
                                 <!-- Welcome Text -->
                                 <div class="welcome-text">
-                                    <h1 class="h1">Find Your Dream
+                                    <h1 class="h1">Find Your
                                     <br class="d-md-none">
                                     <span class="typed border-bottom"></span>
                                 </h1>
-                                    <p class="mt-4">We Have Over Million Properties For You.</p>
+                                    <p class="mt-4"> <b>We Have Over Million Properties For You</b></p>
                                 </div>
                                 <!--/ End Welcome Text -->
                                 <!-- Search Form -->
@@ -2040,7 +2035,7 @@
         <script src="revolution/js/jquery.themepunch.tools.min.js"></script>
         <script src="revolution/js/jquery.themepunch.revolution.min.js"></script>
 
-        <script>
+       <!-- <script>
             var typed = new Typed('.typed', {
                 strings: ["House ^2000", "Apartment ^2000", "Plaza ^4000"],
                 smartBackspace: false,
@@ -2052,7 +2047,7 @@
                 startDelay: 800
             });
 
-        </script>
+        </script> -->
 
         <script>
             $('.slick-lancers').slick({
@@ -2179,7 +2174,23 @@
             });
         });
     </script>
-    
+    <!-- Include Typed.js -->
+<script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+
+<!-- Typed.js Script -->
+<script>
+    var typed = new Typed(".typed", {
+        strings: ["Perfect Home", "Luxury Villa", "Modern Penthouse", "Executive Office", 
+        "Retail Plaza", "Serviced Apartment", "Smart Home", "Premium Warehouse", "Office Complex", "Airbnb Retreat"]
+,
+        typeSpeed: 100,  // Typing speed in milliseconds
+        backSpeed: 50,   // Backspacing speed
+        backDelay: 2000, // Delay before typing the next word
+        startDelay: 500, // Delay before typing starts
+        loop: true       // Keeps the typing effect looping
+    });
+</script>
+
 </body>
 
 </html>
