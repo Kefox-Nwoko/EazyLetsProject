@@ -25,10 +25,13 @@
     <link rel="stylesheet" href="css/menu.css">
     <link rel="stylesheet" href="css/slick.css">
     <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/aos.css">
     <link rel="stylesheet" id="color" href="css/default.css">
+    <script src="js/aos.js"></script>
+    <script src="js/wow.min.js"></script>
 </head>
 
-<body class="inner-pages hd-white about">
+<body class="inner-pages blue fade-in-page">
     <!-- Wrapper -->
     <div id="wrapper">
         <!-- START SECTION HEADINGS -->
@@ -55,12 +58,7 @@
                         <!-- Main Navigation -->
                         <nav id="navigation" class="style-1">
                             <ul id="responsive">
-                                <li><a href="index.html">Home</a>
-                                    <ul>
-                                        <li><a href="properties-grid-1.html">Listings</a></li>
-                                        <li><a href="agents-listing-grid.html">Agents</a></li>
-                                    </ul>
-                                </li>
+                                <li><a href="index.html">Home</a> </li>
                                 <li><a href="about.html">About</a></li>                       
                                 <li><a href="blog-grid-sidebar.html">Blog</a></li>
                                 <li><a href="contact-us.html">Contact</a></li>
@@ -68,7 +66,7 @@
                                 <li class="d-none d-xl-none d-block d-lg-block"><a href="register.html">Register</a></li>
                                 <li class="d-none d-xl-none d-block d-lg-block mt-5 pb-4 ml-5 border-bottom-0">
                                     <a href="add-property.html" class="button border btn-lg btn-block text-center">
-                                        Add Listing<i class="fas fa-laptop-house ml-2"></i>
+                                        Add Property<i class="fas fa-laptop-house ml-2"></i>
                                     </a>
                                 </li>
                             </ul>
@@ -81,7 +79,7 @@
                     <div class="right-side d-none d-none d-lg-none d-xl-flex">
                         <!-- Header Widget -->
                         <div class="header-widget">
-                            <a href="add-property.html" class="button border">Add Listing<i class="fas fa-laptop-house ml-2"></i></a>
+                            <a href="add-property.html" class="button border">Add Property<i class="fas fa-laptop-house ml-2"></i></a>
                         </div>
                         <!-- Header Widget / End -->
                     </div>
@@ -127,10 +125,8 @@
 
                 </div>
             </div>
-            <!-- Header / End -->
-
-        </header>
-        <div class="clearfix"></div>
+     </header>
+      <div class="clearfix"></div>
         <!-- Header Container / End -->
 
         <section class="headings">
@@ -799,6 +795,15 @@
 
     </div>
     <!-- Wrapper / End -->
+     
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+          AOS.init();
+          new WOW().init();
+        });
+      </script>
+      
+
 </body>
 
 </html>
