@@ -1,0 +1,17 @@
+I0315 02:53:59.982850    6544 load.go:37] Reloading schema and connectors...
+I0315 02:54:00.058816    6544 control.go:59] [/emulator/eazyletsproject 6731] UpdateResources(): done
+Schema: sources: schema\schema.gql [2088B] 
+Connector "default": sources: connector\mutations.gql [1233B] connector\queries.gql [1802B] 
+I0315 02:54:00.097699    6544 collector.go:107] schema extensions wrote into "C:\\DUMP\\Projects\\EazyLetsProject\\dataconnect\\.dataconnect\\schema"
+Generated sources: prelude.gql [67020B] 
+I0315 02:54:00.097699    6544 load.go:115] Finished reloading
+I0315 02:54:00.101370    6544 dev.go:95] Listening on address (HTTP + gRPC): 127.0.0.1:9399
+I0315 02:54:00.104404    6544 dev.go:95] Listening on address (HTTP + gRPC): [::1]:9399
+I0315 02:54:09.773365    6544 control.go:59] [/emulator/eazyletsproject 0e45] UpdateResources(): done
+Schema: sources: schema\schema.gql [2088B] 
+Connector "default": sources: connector\mutations.gql [1233B] connector\queries.gql [1802B] 
+I0315 14:50:31.412550    6544 load.go:37] Reloading schema and connectors...
+E0315 14:50:31.414718    6544 load.go:79] Could not load sources: <nil>
+I0315 14:50:31.415774    6544 collector.go:107] schema extensions wrote into "C:\\DUMP\\Projects\\EazyLetsProject\\dataconnect\\.dataconnect\\schema"
+Generated sources: prelude.gql [67020B] 
+I0315 14:50:31.415774    6544 load.go:80] Finished reloading
