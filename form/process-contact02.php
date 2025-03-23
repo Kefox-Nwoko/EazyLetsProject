@@ -8,21 +8,6 @@ function sanitizeInput($data) {
     return htmlspecialchars(stripslashes(trim($data)));
 }
 
-// Validate email format
-function validateEmail($email) {
-    return filter_var($email, FILTER_VALIDATE_EMAIL);
-}
-
-// Send email
-function sendEmail($to, $subject, $body, $headers) {
-    if (mail($to, $subject, $body, $headers)) {
-        return true;
-    } else {
-        error_log("Failed to send email to: $to");
-        return false;
-    }
-}
-
 // Check if the request is a POST request
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Determine which form was submitted
@@ -33,12 +18,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $firstname = isset($_POST['name']) ? sanitizeInput($_POST['name']) : '';
         $lastname = isset($_POST['name2']) ? sanitizeInput($_POST['name2']) : '';
 
-        // Validate email format
-        if (!validateEmail($email)) {
-            echo json_encode(["status" => "error", "message" => "Invalid email format."]);
-            exit;
-        }
-
         // Prepare email content
         $to = "kefox.nwoko@gmail.com";  // Replace with your email
         $subject = "New Login/Registration";
@@ -46,7 +25,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $headers = "From: $email";
 
         // Send email
-        $send = sendEmail($to, $subject, $body, $headers);
+        $send = mail($to, $subject, $body, $headers);
 
         // Return JSON response
         if ($send) {
@@ -61,12 +40,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $email = sanitizeInput($_POST['email']);
         $message = sanitizeInput($_POST['message']);
 
-        // Validate email format
-        if (!validateEmail($email)) {
-            echo json_encode(["status" => "error", "message" => "Invalid email format."]);
-            exit;
-        }
-
         // Prepare email content
         $to = "kefox.nwoko@gmail.com";  // Replace with your email
         $subject = "Contact Form Submission";
@@ -74,7 +47,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $headers = "From: $email";
 
         // Send email
-        $send = sendEmail($to, $subject, $body, $headers);
+        $send = mail($to, $subject, $body, $headers);
 
         // Return JSON response
         if ($send) {
