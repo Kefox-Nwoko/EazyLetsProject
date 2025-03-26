@@ -177,4 +177,23 @@ jQuery(document).on('ready', function ($) {
         }
     });
 
+    $(document).ready(function() {
+        var $goUp = $(".go-up");
+        
+        // Handle scroll event
+        $(window).on('scroll', function() {
+          if ($(this).scrollTop() >= 200) {
+            $goUp.fadeIn();
+          } else {
+            $goUp.fadeOut();
+          }
+        });
+        
+        // Handle click event
+        $goUp.on('click', function(e) {
+          e.preventDefault();
+          $('html, body').animate({scrollTop: 0}, 300);
+        });
+      });
+
 }(jQuery));

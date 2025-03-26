@@ -4,6 +4,8 @@ Template Name: Find Houses - HTML5 Template
 Version      : 1.0
 */
 
+console.log("Script.js is running on this page.");
+
 "use strict";
 
 jQuery(document).on('ready', function ($) {
@@ -17,7 +19,7 @@ jQuery(document).on('ready', function ($) {
     /*---------------------------------
      //------ ANIMATE HEADER ------//
      ----------------------------------*/
-    $(window).on('scroll', function () {
+    /*$(window).on('scroll', function () {
         var sticky = $(".sticky-header");
         var scroll = $(window).scrollTop();
         if (scroll < 265) {
@@ -25,8 +27,47 @@ jQuery(document).on('ready', function ($) {
         } else {
             sticky.addClass("sticky");
         }
-    });
+    });*/
+    
 
+    /*$(window).on('scroll', function () {
+        var sticky = $("#header-container");
+        var scroll = $(window).scrollTop();
+        if (scroll < 265) {
+            sticky.removeClass("sticky");
+        } else {
+            sticky.addClass("sticky");
+        }
+    }); */
+    $(document).ready(function () {
+        console.log("Script.js loaded on: " + window.location.pathname);
+    
+        // Check if the current page is index.html (home page)
+        if (window.location.pathname.includes("index.html") || window.location.pathname === "/") {
+            console.log("Home page detected. Sticky navbar script is disabled.");
+            return; // Exit script early to avoid duplication on home page
+        }
+    
+        $(window).on('scroll', function () {
+            var sticky = $("#header-container"); // Target the header container
+            var scroll = $(window).scrollTop();
+    
+            console.log("Scroll position: " + scroll); // Debugging
+    
+            if (scroll > 50) {  // Change navbar when scrolling down 50px
+                if (!sticky.hasClass("sticky")) {
+                    sticky.addClass("sticky");
+                    console.log("Sticky class added.");
+                }
+            } else {
+                if (sticky.hasClass("sticky")) {
+                    sticky.removeClass("sticky");
+                    console.log("Sticky class removed.");
+                }
+            }
+        });
+    });
+    
     /*---------------------------------
      //------ Rev Slider ------//
      ----------------------------------*/
@@ -410,5 +451,8 @@ jQuery(document).on('ready', function ($) {
         $(".tab-contents").not(b).css("display", "none");
         $(b).fadeIn();
     });
+
+    console.log("Script.js is running on this page.");
+
 
 }(jQuery));

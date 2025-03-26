@@ -227,6 +227,7 @@ img {
   padding: 1rem 0;
 }
 
+
 .header.head-tr {
   position: absolute;
   width: 100%;
@@ -17587,7 +17588,7 @@ h2.white {
 /*-- 51. INNER PAGE AGENTS LISTING GRID -*/
 /*---------------------------------------*/
 .inner-pages section.team {
-  padding: 6rem 0;
+  padding: 0rem 0;
   background: #f5f7fb;
 }
 
@@ -24859,6 +24860,30 @@ a.button.border, a.button {
 .header-widget .button {
   margin-right: 20px; /* Push button toward center */
 }
+
+@media screen and (max-width: 991px) {
+  /* Default navbar (before scrolling) should be transparent */
+  .header {
+      background: transparent !important;
+  }
+
+  /* Sticky navbar (after scrolling) should remain white */
+  .sticky {
+      background: white !important;
+  }
+}
+
+.sticky {
+  position: fixed !important;  /* Keeps navbar fixed at the top */
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: white !important;  /* Ensures visibility */
+  z-index: 9999;  /* Keeps it above other elements */
+  transition: all 0.3s ease-in-out;  /* Smooth transition */
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);  /* Optional: subtle shadow */
+}
+
 
 
 /*# sourceMappingURL=styles.css.map */

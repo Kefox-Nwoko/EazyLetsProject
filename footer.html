@@ -1,0 +1,21 @@
+<!-- START FOOTER -->
+
+<!-- Back to Top Button (Original SmoothScroll Version) -->
+<a data-scroll href="#wrapper" class="go-up">
+    <i class="fa fa-angle-double-up" aria-hidden="true"></i>
+</a>
+
+<!-- Load SmoothScroll JS (if not already in head/scripts) -->
+<script src="js/smooth-scroll.min.js"></script>
+<script>
+    // Initialize SmoothScroll (same as original)
+    document.addEventListener('DOMContentLoaded', function() {
+        new SmoothScroll('a[href*="#"]', {
+            speed: 800,
+            offset: 0,
+            updateURL: false
+        });
+    });
+</script>
+
+<!-- END FOOTER -->
