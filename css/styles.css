@@ -119,13 +119,13 @@ h2 {
 
 h2 span {
   font-weight: 600;
-  color: #311318;
+  color: #280253;
 }
 
 h3 {
   font-family: 'Montserrat', sans-serif;
   font-size: 18px;
-  color: #333;
+  color: #000080;
   font-weight: 600;
 }
 
@@ -2567,7 +2567,7 @@ section.portfolio {
 
 .portfolio .sec-title h2 span {
   font-weight: 600;
-  color: #111;
+  color: #0b0122;
 }
 
 .portfolio .sec-title h2 {
@@ -3489,7 +3489,8 @@ section.team {
 }
 
 .team .sec-title h2 {
-  color: #FF385C;
+  color: #274abb !important;
+  ;
   margin-bottom: .5rem;
 }
 
@@ -5499,7 +5500,7 @@ element.style {
   float: left;
   width: 100%;
   position: relative;
-  padding: 0 0 30px;
+  padding: 0 30px 30px; /* Consistent 30px padding on sides */
   margin-bottom: 50px;
   background: #fff;
   border-radius: 6px;
@@ -5534,7 +5535,7 @@ element.style {
 }
 
 .login-and-register-form .soc-log {
-  padding: 15px 30px;
+  padding: 15px 30px; /* Match side padding */
 }
 
 .login-and-register-form .soc-log p {
@@ -5602,7 +5603,7 @@ element.style {
   position: absolute;
   top: 50%;
   left: 30px;
-  right: 30px;
+  right: 30px; /* Match side padding */
   height: 1px;
   background: #eee;
   z-index: 1;
@@ -5652,7 +5653,7 @@ element.style {
   float: left;
   width: 100%;
   margin-top: 20px;
-  padding: 0 30px;
+  padding: 0 30px; /* Match side padding */
 }
 
 .login-and-register-form .tab {
@@ -24884,6 +24885,64 @@ a.button.border, a.button {
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);  /* Optional: subtle shadow */
 }
 
+/* additional styles to ensure proper flex behaviour*/
+.login-and-register-form .main-register .filter-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px; /* Adjust spacing between items */
+  justify-content: space-between;
+  width: 100%;
+}
 
+.login-and-register-form .tabs-menu {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: flex-start;
+  padding: 0;
+  margin: 20px 0 30px;
+}
+
+.login-and-register-form .tabs-menu li {
+  margin-right: 0; /* Remove the fixed margin-right */
+}
+
+@media (max-width: 480px) {
+  .login-and-register-form .tabs-menu li {
+    flex: 1 0 100%; /* Stack tabs vertically on small screens */
+  }
+  
+  .login-and-register-form .tabs-menu li a {
+    transition: all 0.3s ease;
+    width: 100%;
+    text-align: center;
+  }
+}
+.sec-title h2 span + span {
+  font-weight: 800 !important;
+  color: #274abb !important;
+}
+
+
+/*Add this CSS for responsive signature*/
+
+    .signature-img {
+        max-width: 200px !important; /* PC size */
+    }
+    
+    @media (max-width: 768px) {
+        .signature-img {
+            max-width: 150px !important; /* Tablet size */
+        }
+    }
+    
+    @media (max-width: 576px) {
+        .signature-img {
+            max-width: 120px !important; /* Mobile size */
+        }
+        .about-us.fh {
+            margin-bottom: 15px !important; /* Further reduce gap on mobile */
+        }
+    }
 
 /*# sourceMappingURL=styles.css.map */
