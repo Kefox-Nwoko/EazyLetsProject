@@ -1,3 +1,30 @@
+<?php
+// Database connection and query - ADD YOUR CREDENTIALS HERE
+require_once 'db_connection.php'; // Create this file with your DB credentials
+$db = new PDO('mysql:host=localhost;dbname=your_db', 'username', 'password');
+
+// Get published posts with all needed fields
+$query = "SELECT 
+            id, 
+            title, 
+            content, 
+            excerpt, 
+            image_url, 
+            created_at, 
+            author,
+            author_image,
+            likes_count,
+            comments_count,
+            shares_count
+          FROM blog_posts 
+          WHERE status='published' 
+          ORDER BY created_at DESC
+          LIMIT 6"; // Matches your current layout
+$posts = $db->query($query);
+
+// Get recent posts for sidebar
+$recent_posts = $db->query("SELECT id, title, image_url, created_at FROM blog_posts ORDER BY created_at DESC LIMIT 3");
+?>
 <!DOCTYPE html>
 <html lang="zxx">
 
@@ -46,7 +73,7 @@
                         <div class="mmenu-trigger">
                             <button class="hamburger hamburger--collapse" type="button">
                                 <span class="hamburger-box">
-							<span class="hamburger-inner"></span>
+                            <span class="hamburger-inner"></span>
                                 </span>
                             </button>
                         </div>
@@ -55,7 +82,7 @@
                             <ul id="responsive">
                                 <li><a href="index.html">Home</a> </li>
                                 <li><a href="about.html">About</a></li>                       
-                                <li><a href="blog-grid-sidebar.html">Blog</a></li>
+                                <li><a href="blog-grid-sidebar.php">Blog</a></li>
                                 <li><a href="contact-us.html">Contact</a></li>
                                 <li class="d-none d-xl-none d-block d-lg-block"><a href="login.html">Login</a></li>
                                 <li class="d-none d-xl-none d-block d-lg-block"><a href="register.html">Register</a></li>
@@ -79,7 +106,6 @@
                         <!-- Header Widget / End -->
                     </div>
                     <!-- Right Side Content / End -->
-
 
                     <div class="header-user-menu user-menu add">
                         <div class="header-user-name">
@@ -142,190 +168,38 @@
                 <div class="row">
                     <div class="col-lg-9 col-md-12 col-xs-12">
                         <div class="row">
+                            <?php foreach($posts as $post): ?>
                             <div class="col-md-6 col-xs-12">
-                                <div class="news-item nomb">
-                                    <a href="blog-details.html" class="news-img-link">
+                                <div class="news-item <?= ($post === reset($posts)) ? 'nomb' : '' ?>">
+                                    <a href="blog-details.php?id=<?= $post['id'] ?>" class="news-img-link">
                                         <div class="news-item-img">
-                                            <img class="img-responsive" src="images/blog/b-1.jpg" alt="blog image">
+                                            <img class="img-responsive" src="<?= htmlspecialchars($post['image_url']) ?>" alt="blog image">
                                         </div>
                                     </a>
                                     <div class="news-item-text">
-                                        <a href="blog-details.html"><h3>Real Estate News</h3></a>
+                                        <a href="blog-details.php?id=<?= $post['id'] ?>"><h3><?= htmlspecialchars($post['title']) ?></h3></a>
                                         <div class="dates">
-                                            <span class="date">April 11, 2020 &nbsp;/</span>
+                                            <span class="date"><?= date('F j, Y', strtotime($post['created_at'])) ?> &nbsp;/</span>
                                             <ul class="action-list pl-0">
-                                                <li class="action-item pl-2"><i class="fa fa-heart"></i> <span>306</span></li>
-                                                <li class="action-item"><i class="fa fa-comment"></i> <span>34</span></li>
-                                                <li class="action-item"><i class="fa fa-share-alt"></i> <span>122</span></li>
+                                                <li class="action-item pl-2"><i class="fa fa-heart"></i> <span><?= $post['likes_count'] ?></span></li>
+                                                <li class="action-item"><i class="fa fa-comment"></i> <span><?= $post['comments_count'] ?></span></li>
+                                                <li class="action-item"><i class="fa fa-share-alt"></i> <span><?= $post['shares_count'] ?></span></li>
                                             </ul>
                                         </div>
                                         <div class="news-item-descr big-news">
-                                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ipsum dolor sit amet, consectetur Real Estate News.</p>
+                                            <p><?= htmlspecialchars($post['excerpt']) ?></p>
                                         </div>
                                         <div class="news-item-bottom">
-                                            <a href="blog-details.html" class="news-link">Read more...</a>
+                                            <a href="blog-details.php?id=<?= $post['id'] ?>" class="news-link">Read more...</a>
                                             <div class="admin">
-                                                <p>By, Karl Smith</p>
-                                                <img src="images/testimonials/ts-1.jpg" alt="">
+                                                <p>By, <?= htmlspecialchars($post['author']) ?></p>
+                                                <img src="<?= htmlspecialchars($post['author_image']) ?>" alt="">
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-md-6 col-xs-12">
-                                <div class="news-item">
-                                    <a href="blog-details.html" class="news-img-link">
-                                        <div class="news-item-img">
-                                            <img class="img-responsive" src="images/blog/b-2.jpg" alt="blog image">
-                                        </div>
-                                    </a>
-                                    <div class="news-item-text">
-                                        <a href="blog-details.html"><h3>Real Estate News</h3></a>
-                                        <div class="dates">
-                                            <span class="date">April 11, 2020 &nbsp;/</span>
-                                            <ul class="action-list pl-0">
-                                                <li class="action-item pl-2"><i class="fa fa-heart"></i> <span>306</span></li>
-                                                <li class="action-item"><i class="fa fa-comment"></i> <span>34</span></li>
-                                                <li class="action-item"><i class="fa fa-share-alt"></i> <span>122</span></li>
-                                            </ul>
-                                        </div>
-                                        <div class="news-item-descr big-news">
-                                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ipsum dolor sit amet, consectetur Real Estate News.</p>
-                                        </div>
-                                        <div class="news-item-bottom">
-                                            <a href="blog-details.html" class="news-link">Read more...</a>
-                                            <div class="admin">
-                                                <p>By, Karl Smith</p>
-                                                <img src="images/testimonials/ts-2.jpg" alt="">
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row space2 port">
-                            <div class="col-md-6 col-xs-12">
-                                <div class="news-item">
-                                    <a href="blog-details.html" class="news-img-link">
-                                        <div class="news-item-img">
-                                            <img class="img-responsive" src="images/blog/b-3.jpg" alt="blog image">
-                                        </div>
-                                    </a>
-                                    <div class="news-item-text">
-                                        <a href="blog-details.html"><h3>Real Estate News</h3></a>
-                                        <div class="dates">
-                                            <span class="date">April 11, 2020 &nbsp;/</span>
-                                            <ul class="action-list pl-0">
-                                                <li class="action-item pl-2"><i class="fa fa-heart"></i> <span>306</span></li>
-                                                <li class="action-item"><i class="fa fa-comment"></i> <span>34</span></li>
-                                                <li class="action-item"><i class="fa fa-share-alt"></i> <span>122</span></li>
-                                            </ul>
-                                        </div>
-                                        <div class="news-item-descr big-news">
-                                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ipsum dolor sit amet, consectetur Real Estate News.</p>
-                                        </div>
-                                        <div class="news-item-bottom">
-                                            <a href="blog-details.html" class="news-link">Read more...</a>
-                                            <div class="admin">
-                                                <p>By, Karl Smith</p>
-                                                <img src="images/testimonials/ts-3.jpg" alt="">
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-6 col-xs-12">
-                                <div class="news-item">
-                                    <a href="blog-details.html" class="news-img-link">
-                                        <div class="news-item-img">
-                                            <img class="img-responsive" src="images/blog/b-4.jpg" alt="blog image">
-                                        </div>
-                                    </a>
-                                    <div class="news-item-text">
-                                        <a href="blog-details.html"><h3>Real Estate News</h3></a>
-                                        <div class="dates">
-                                            <span class="date">April 11, 2020 &nbsp;/</span>
-                                            <ul class="action-list pl-0">
-                                                <li class="action-item pl-2"><i class="fa fa-heart"></i> <span>306</span></li>
-                                                <li class="action-item"><i class="fa fa-comment"></i> <span>34</span></li>
-                                                <li class="action-item"><i class="fa fa-share-alt"></i> <span>122</span></li>
-                                            </ul>
-                                        </div>
-                                        <div class="news-item-descr big-news">
-                                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ipsum dolor sit amet, consectetur Real Estate News.</p>
-                                        </div>
-                                        <div class="news-item-bottom">
-                                            <a href="blog-details.html" class="news-link">Read more...</a>
-                                            <div class="admin">
-                                                <p>By, Karl Smith</p>
-                                                <img src="images/testimonials/ts-4.jpg" alt="">
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-6 col-xs-12 no-mb wpt-2">
-                                <div class="news-item">
-                                    <a href="blog-details.html" class="news-img-link">
-                                        <div class="news-item-img">
-                                            <img class="img-responsive" src="images/blog/b-5.jpg" alt="blog image">
-                                        </div>
-                                    </a>
-                                    <div class="news-item-text">
-                                        <a href="blog-details.html"><h3>Real Estate News</h3></a>
-                                        <div class="dates">
-                                            <span class="date">April 11, 2020 &nbsp;/</span>
-                                            <ul class="action-list pl-0">
-                                                <li class="action-item pl-2"><i class="fa fa-heart"></i> <span>306</span></li>
-                                                <li class="action-item"><i class="fa fa-comment"></i> <span>34</span></li>
-                                                <li class="action-item"><i class="fa fa-share-alt"></i> <span>122</span></li>
-                                            </ul>
-                                        </div>
-                                        <div class="news-item-descr big-news">
-                                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ipsum dolor sit amet, consectetur Real Estate News.</p>
-                                        </div>
-                                        <div class="news-item-bottom">
-                                            <a href="blog-details.html" class="news-link">Read more...</a>
-                                            <div class="admin">
-                                                <p>By, Karl Smith</p>
-                                                <img src="images/testimonials/ts-5.jpg" alt="">
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-6 col-xs-12 no-mb wpt-2">
-                                <div class="news-item">
-                                    <a href="blog-details.html" class="news-img-link">
-                                        <div class="news-item-img">
-                                            <img class="img-responsive" src="images/blog/b-6.jpg" alt="blog image">
-                                        </div>
-                                    </a>
-                                    <div class="news-item-text">
-                                        <a href="blog-details.html"><h3>Real Estate News</h3></a>
-                                        <div class="dates">
-                                            <span class="date">April 11, 2020 &nbsp;/</span>
-                                            <ul class="action-list pl-0">
-                                                <li class="action-item pl-2"><i class="fa fa-heart"></i> <span>306</span></li>
-                                                <li class="action-item"><i class="fa fa-comment"></i> <span>34</span></li>
-                                                <li class="action-item"><i class="fa fa-share-alt"></i> <span>122</span></li>
-                                            </ul>
-                                        </div>
-                                        <div class="news-item-descr big-news">
-                                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ipsum dolor sit amet, consectetur Real Estate News.</p>
-                                        </div>
-                                        <div class="news-item-bottom">
-                                            <a href="blog-details.html" class="news-link">Read more...</a>
-                                            <div class="admin">
-                                                <p>By, Karl Smith</p>
-                                                <img src="images/testimonials/ts-6.jpg" alt="">
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                            <?php endforeach; ?>
                         </div>
                     </div>
                     <aside class="col-lg-3 col-md-12">
@@ -373,33 +247,20 @@
                             </div>
                             <div class="recent-post pt-5">
                                 <h5 class="font-weight-bold mb-4">Recent Posts</h5>
+                                <?php foreach($recent_posts as $recent): ?>
                                 <div class="recent-main">
                                     <div class="recent-img">
-                                        <a href="blog-details.html"><img src="images/blog/b-1.jpg" alt=""></a>
+                                        <a href="blog-details.php?id=<?= $recent['id'] ?>"><img src="<?= htmlspecialchars($recent['image_url']) ?>" alt=""></a>
                                     </div>
                                     <div class="info-img">
-                                        <a href="blog-details.html"><h6>Real Estate</h6></a>
-                                        <p>May 10, 2020</p>
+                                        <a href="blog-details.php?id=<?= $recent['id'] ?>"><h6><?= htmlspecialchars($recent['title']) ?></h6></a>
+                                        <p><?= date('M j, Y', strtotime($recent['created_at'])) ?></p>
                                     </div>
                                 </div>
-                                <div class="recent-main my-4">
-                                    <div class="recent-img">
-                                        <a href="blog-details.html"><img src="images/blog/b-2.jpg" alt=""></a>
-                                    </div>
-                                    <div class="info-img">
-                                        <a href="blog-details.html"><h6>Real Estate</h6></a>
-                                        <p>May 10, 2020</p>
-                                    </div>
-                                </div>
-                                <div class="recent-main">
-                                    <div class="recent-img">
-                                        <a href="blog-details.html"><img src="images/blog/b-3.jpg" alt=""></a>
-                                    </div>
-                                    <div class="info-img">
-                                        <a href="blog-details.html"><h6>Real Estate</h6></a>
-                                        <p>May 10, 2020</p>
-                                    </div>
-                                </div>
+                                <?php if($recent !== end($recent_posts)): ?>
+                                <div class="recent-main my-4"></div>
+                                <?php endif; ?>
+                                <?php endforeach; ?>
                             </div>
                         </div>
                     </aside>

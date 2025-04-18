@@ -307,3 +307,76 @@ I0331 11:35:54.781627   24664 load.go:80] Finished reloading
 I0331 11:35:54.798912   24664 dev.go:95] Listening on address (HTTP + gRPC): 127.0.0.1:50001
  {"metadata":{"emulator":{"name":"dataconnect"},"message":"I0331 11:35:54.774840   24664 env.go:20] Enabled Preview Flags: conn_evolution\nI0331 11:35:54.777967   24664 load.go:37] Reloading schema and connectors...\nE0331 11:35:54.780061   24664 load.go:69] Could not generate extensions: rpc error: code = NotFound desc = no schema found for service \"eazyletsproject\". No service has a schema.\nE0331 11:35:54.780061   24664 load.go:79] Could not load sources: <nil>\nI0331 11:35:54.781108   24664 collector.go:107] schema extensions wrote into \"c:\\\\DUMP\\\\Projects\\\\EazyLetsProject\\\\dataconnect\\\\.dataconnect\\\\schema\"\nGenerated sources: prelude.gql [67159B] \nI0331 11:35:54.781627   24664 load.go:80] Finished reloading\nI0331 11:35:54.798912   24664 dev.go:95] Listening on address (HTTP + gRPC): 127.0.0.1:50001\n"}}
 [error] [Firebase Plugin] error:  {}
+[debug] [2025-04-10T18:42:30.632Z] [Firebase Plugin] Activating Firebase extension.
+[debug] [2025-04-10T18:42:36.112Z] [Firebase Plugin] requireAuthWrapper
+[debug] [2025-04-10T18:42:36.116Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2025-04-10T18:42:36.117Z] > authorizing via signed-in user (kefox.nwoko@gmail.com)
+[debug] [2025-04-10T18:42:36.125Z] Checked if tokens are valid: false, expires at: 1742566682531
+[debug] [2025-04-10T18:42:36.126Z] Checked if tokens are valid: false, expires at: 1742566682531
+[debug] [2025-04-10T18:42:36.127Z] > refreshing access token with scopes: []
+[debug] [2025-04-10T18:42:36.131Z] >>> [apiv2][query] POST https://www.googleapis.com/oauth2/v3/token [none]
+[debug] [2025-04-10T18:42:36.132Z] >>> [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2025-04-10T18:42:36.169Z] [Firebase Plugin] VSCode notification server listening on port 40001
+[info] [Firebase Plugin] Starting Data Connect toolkit (version 2.1.0) on port 50001
+[info] i  dataconnect: downloading dataconnect-emulator-2.1.0.exe... {"metadata":{"emulator":{"name":"dataconnect"},"message":"downloading dataconnect-emulator-2.1.0.exe..."}}
+[debug] [2025-04-10T18:42:46.505Z] >>> [apiv2][query] GET https://storage.googleapis.com/firemat-preview-drop/emulator/dataconnect-emulator-windows-v2.1.0 
+[debug] [2025-04-10T18:42:54.160Z] <<< [apiv2][status] POST https://www.googleapis.com/oauth2/v3/token 200
+[debug] [2025-04-10T18:42:54.164Z] <<< [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2025-04-10T18:42:54.231Z] [Firebase Plugin] User found:  kefox.nwoko@gmail.com
+[info] [Firebase Plugin] (Core:Project) New user detected, fetching projects
+[debug] [2025-04-10T18:42:54.240Z] Checked if tokens are valid: true, expires at: 1744314173167
+[debug] [2025-04-10T18:42:54.242Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects pageSize=1000
+[debug] [2025-04-10T18:42:56.007Z] <<< [apiv2][status] GET https://storage.googleapis.com/firemat-preview-drop/emulator/dataconnect-emulator-windows-v2.1.0 200
+[debug] [2025-04-10T18:42:56.009Z] <<< [apiv2][body] GET https://storage.googleapis.com/firemat-preview-drop/emulator/dataconnect-emulator-windows-v2.1.0 [stream]
+[debug] [2025-04-10T18:43:01.288Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects 200
+[debug] [2025-04-10T18:43:01.289Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects [omitted]
+[info] i  dataconnect: Removing outdated emulator files: dataconnect-emulator-2.0.0.exe {"metadata":{"emulator":{"name":"dataconnect"},"message":"Removing outdated emulator files: dataconnect-emulator-2.0.0.exe"}}
+[debug] [2025-04-10T18:44:41.583Z] Ignoring unsupported arg: auto_download {"metadata":{"emulator":{"name":"dataconnect"},"message":"Ignoring unsupported arg: auto_download"}}
+[debug] [2025-04-10T18:44:41.584Z] Ignoring unsupported arg: port {"metadata":{"emulator":{"name":"dataconnect"},"message":"Ignoring unsupported arg: port"}}
+[debug] [2025-04-10T18:44:41.584Z] Starting Data Connect Emulator with command {"binary":"C:\\Users\\KefoxNwoko-RTNG\\.cache\\firebase\\emulators\\dataconnect-emulator-2.1.0.exe","args":["--logtostderr","-v=2","dev","--listen=localhost:50001","--config_dir=c:\\DUMP\\Projects\\EazyLetsProject\\dataconnect","--enable_output_schema_extensions=true","--enable_output_generated_sdk=true"],"optionalArgs":["listen","config_dir","enable_output_schema_extensions","enable_output_generated_sdk"],"joinArgs":true,"shell":false,"port":9399} {"metadata":{"emulator":{"name":"dataconnect"},"message":"Starting Data Connect Emulator with command {\"binary\":\"C:\\\\Users\\\\KefoxNwoko-RTNG\\\\.cache\\\\firebase\\\\emulators\\\\dataconnect-emulator-2.1.0.exe\",\"args\":[\"--logtostderr\",\"-v=2\",\"dev\",\"--listen=localhost:50001\",\"--config_dir=c:\\\\DUMP\\\\Projects\\\\EazyLetsProject\\\\dataconnect\",\"--enable_output_schema_extensions=true\",\"--enable_output_generated_sdk=true\"],\"optionalArgs\":[\"listen\",\"config_dir\",\"enable_output_schema_extensions\",\"enable_output_generated_sdk\"],\"joinArgs\":true,\"shell\":false,\"port\":9399}"}}
+[info] i  dataconnect: Data Connect Emulator logging to dataconnect-debug.log {"metadata":{"emulator":{"name":"dataconnect"},"message":"Data Connect Emulator logging to \u001b[1mdataconnect-debug.log\u001b[22m"}}
+[debug] [2025-04-10T18:44:41.703Z] I0410 19:44:41.701032   15636 env.go:20] Enabled Preview Flags: conn_evolution
+ {"metadata":{"emulator":{"name":"dataconnect"},"message":"I0410 19:44:41.701032   15636 env.go:20] Enabled Preview Flags: conn_evolution\n"}}
+[debug] [2025-04-10T18:44:41.708Z] I0410 19:44:41.708361   15636 load.go:37] Reloading schema and connectors...
+ {"metadata":{"emulator":{"name":"dataconnect"},"message":"I0410 19:44:41.708361   15636 load.go:37] Reloading schema and connectors...\n"}}
+[debug] [2025-04-10T18:44:41.712Z] E0410 19:44:41.712745   15636 load.go:69] Could not generate extensions: rpc error: code = NotFound desc = no schema found for service "eazyletsproject". No service has a schema.
+E0410 19:44:41.712745   15636 load.go:79] Could not load sources: <nil>
+ {"metadata":{"emulator":{"name":"dataconnect"},"message":"E0410 19:44:41.712745   15636 load.go:69] Could not generate extensions: rpc error: code = NotFound desc = no schema found for service \"eazyletsproject\". No service has a schema.\nE0410 19:44:41.712745   15636 load.go:79] Could not load sources: <nil>\n"}}
+[debug] [2025-04-10T18:44:41.715Z] I0410 19:44:41.715042   15636 collector.go:107] schema extensions wrote into "c:\\DUMP\\Projects\\EazyLetsProject\\dataconnect\\.dataconnect\\schema"
+Generated sources: prelude.gql [67159B] 
+ {"metadata":{"emulator":{"name":"dataconnect"},"message":"I0410 19:44:41.715042   15636 collector.go:107] schema extensions wrote into \"c:\\\\DUMP\\\\Projects\\\\EazyLetsProject\\\\dataconnect\\\\.dataconnect\\\\schema\"\nGenerated sources: prelude.gql [67159B] \n"}}
+[debug] [2025-04-10T18:44:41.717Z] I0410 19:44:41.715042   15636 load.go:80] Finished reloading
+ {"metadata":{"emulator":{"name":"dataconnect"},"message":"I0410 19:44:41.715042   15636 load.go:80] Finished reloading\n"}}
+[debug] [2025-04-10T18:44:41.753Z] I0410 19:44:41.753087   15636 dev.go:95] Listening on address (HTTP + gRPC): 127.0.0.1:50001
+ {"metadata":{"emulator":{"name":"dataconnect"},"message":"I0410 19:44:41.753087   15636 dev.go:95] Listening on address (HTTP + gRPC): 127.0.0.1:50001\n"}}
+[error] [Firebase Plugin] error:  {}
+[info] [Firebase Plugin] Stopping Data Connect toolkit
+[warn] !  Data Connect Emulator has exited upon receiving signal: SIGINT 
+[debug] [2025-04-10T18:48:33.767Z] [Firebase Plugin] Activating Firebase extension.
+[debug] [2025-04-10T18:48:55.997Z] [Firebase Plugin] requireAuthWrapper
+[debug] [2025-04-10T18:48:56.004Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2025-04-10T18:48:56.006Z] > authorizing via signed-in user (kefox.nwoko@gmail.com)
+[debug] [2025-04-10T18:48:56.021Z] Checked if tokens are valid: true, expires at: 1744314173167
+[debug] [2025-04-10T18:48:56.023Z] Checked if tokens are valid: true, expires at: 1744314173167
+[debug] [2025-04-10T18:48:56.025Z] [Firebase Plugin] User found:  kefox.nwoko@gmail.com
+[info] [Firebase Plugin] (Core:Project) New user detected, fetching projects
+[debug] [2025-04-10T18:48:56.035Z] Checked if tokens are valid: true, expires at: 1744314173167
+[debug] [2025-04-10T18:48:56.042Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects pageSize=1000
+[debug] [2025-04-10T18:48:56.082Z] [Firebase Plugin] VSCode notification server listening on port 40001
+[info] [Firebase Plugin] Starting Data Connect toolkit (version 2.1.0) on port 50001
+[debug] [2025-04-10T18:49:08.743Z] Ignoring unsupported arg: auto_download {"metadata":{"emulator":{"name":"dataconnect"},"message":"Ignoring unsupported arg: auto_download"}}
+[debug] [2025-04-10T18:49:08.745Z] Ignoring unsupported arg: port {"metadata":{"emulator":{"name":"dataconnect"},"message":"Ignoring unsupported arg: port"}}
+[debug] [2025-04-10T18:49:08.746Z] Starting Data Connect Emulator with command {"binary":"C:\\Users\\KefoxNwoko-RTNG\\.cache\\firebase\\emulators\\dataconnect-emulator-2.1.0.exe","args":["--logtostderr","-v=2","dev","--listen=localhost:50001","--config_dir=c:\\DUMP\\Projects\\EazyLetsProject\\dataconnect","--enable_output_schema_extensions=true","--enable_output_generated_sdk=true"],"optionalArgs":["listen","config_dir","enable_output_schema_extensions","enable_output_generated_sdk"],"joinArgs":true,"shell":false,"port":9399} {"metadata":{"emulator":{"name":"dataconnect"},"message":"Starting Data Connect Emulator with command {\"binary\":\"C:\\\\Users\\\\KefoxNwoko-RTNG\\\\.cache\\\\firebase\\\\emulators\\\\dataconnect-emulator-2.1.0.exe\",\"args\":[\"--logtostderr\",\"-v=2\",\"dev\",\"--listen=localhost:50001\",\"--config_dir=c:\\\\DUMP\\\\Projects\\\\EazyLetsProject\\\\dataconnect\",\"--enable_output_schema_extensions=true\",\"--enable_output_generated_sdk=true\"],\"optionalArgs\":[\"listen\",\"config_dir\",\"enable_output_schema_extensions\",\"enable_output_generated_sdk\"],\"joinArgs\":true,\"shell\":false,\"port\":9399}"}}
+[info] i  dataconnect: Data Connect Emulator logging to dataconnect-debug.log {"metadata":{"emulator":{"name":"dataconnect"},"message":"Data Connect Emulator logging to \u001b[1mdataconnect-debug.log\u001b[22m"}}
+[debug] [2025-04-10T18:49:10.681Z] I0410 19:49:08.962853   20448 env.go:20] Enabled Preview Flags: conn_evolution
+I0410 19:49:08.976559   20448 load.go:37] Reloading schema and connectors...
+E0410 19:49:08.985783   20448 load.go:69] Could not generate extensions: rpc error: code = NotFound desc = no schema found for service "eazyletsproject". No service has a schema.
+E0410 19:49:08.985783   20448 load.go:79] Could not load sources: <nil>
+I0410 19:49:08.989939   20448 collector.go:107] schema extensions wrote into "c:\\DUMP\\Projects\\EazyLetsProject\\dataconnect\\.dataconnect\\schema"
+Generated sources: prelude.gql [67159B] 
+I0410 19:49:08.990968   20448 load.go:80] Finished reloading
+I0410 19:49:09.030375   20448 dev.go:95] Listening on address (HTTP + gRPC): 127.0.0.1:50001
+ {"metadata":{"emulator":{"name":"dataconnect"},"message":"I0410 19:49:08.962853   20448 env.go:20] Enabled Preview Flags: conn_evolution\nI0410 19:49:08.976559   20448 load.go:37] Reloading schema and connectors...\nE0410 19:49:08.985783   20448 load.go:69] Could not generate extensions: rpc error: code = NotFound desc = no schema found for service \"eazyletsproject\". No service has a schema.\nE0410 19:49:08.985783   20448 load.go:79] Could not load sources: <nil>\nI0410 19:49:08.989939   20448 collector.go:107] schema extensions wrote into \"c:\\\\DUMP\\\\Projects\\\\EazyLetsProject\\\\dataconnect\\\\.dataconnect\\\\schema\"\nGenerated sources: prelude.gql [67159B] \nI0410 19:49:08.990968   20448 load.go:80] Finished reloading\nI0410 19:49:09.030375   20448 dev.go:95] Listening on address (HTTP + gRPC): 127.0.0.1:50001\n"}}
+[error] [Firebase Plugin] error:  {}
+[debug] [2025-04-10T18:49:14.203Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects 200
+[debug] [2025-04-10T18:49:14.204Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects [omitted]

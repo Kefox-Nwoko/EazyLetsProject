@@ -1704,7 +1704,7 @@ section.recently.portfolio {
   display: block;
   height: 3px;
   font-weight: bold;
-  background-color: #FF385C;
+  background-color: #274abb;
   content: " ";
   width: 50px;
   margin-top: .5rem;
@@ -3718,6 +3718,49 @@ section.team {
 
 .team .team-pro .fa.fa-instagram {
   background: #e1306c;
+}
+
+/*-----------------------------------*/
+/* DISABLE ALL HOVER EFFECTS IN TEAM SECTION */
+/*-----------------------------------*/
+.team-wrap:hover .team-content {
+    height: 80px !important; /* Keep original height */
+}
+
+.team-content ul {
+    opacity: 1 !important; /* Always show social icons */
+    transform: translateY(0px) !important; /* Remove translate effect */
+    display: flex !important;
+    justify-content: center !important;
+}
+
+.team-content ul li {
+    opacity: 1 !important; /* Always show social icons */
+    transform: translateY(0px) !important;
+    transition: none !important;
+}
+
+.team-wrap:hover .team-content span a {
+    bottom: 0 !important; /* Remove the movement effect */
+}
+
+/* Remove all transition animations */
+.team-content,
+.team-info,
+.team-content ul,
+.team-content ul li,
+.team-content span a {
+    -webkit-transition: none !important;
+    transition: none !important;
+}
+
+/* Remove individual delays */
+.team-wrap:hover .team-content ul li:nth-child(1),
+.team-wrap:hover .team-content ul li:nth-child(2),
+.team-wrap:hover .team-content ul li:nth-child(3),
+.team-wrap:hover .team-content ul li:nth-child(4),
+.team-wrap:hover .team-content ul li:nth-child(5) {
+    transition-delay: 0ms !important;
 }
 
 /*------------------------------------*/
@@ -24944,5 +24987,141 @@ a.button.border, a.button {
             margin-bottom: 15px !important; /* Further reduce gap on mobile */
         }
     }
+/*-----------------------------------*/
+/* MODIFIED TEAM SECTION STYLES */
+/*-----------------------------------*/
 
-/*# sourceMappingURL=styles.css.map */
+/* Make the lower content section always expanded */
+.team-content {
+  height: 150px !important; /* Set to expanded height permanently */
+}
+
+/* Make social links always visible */
+.team-content ul {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+  display: flex !important;
+  justify-content: center !important;
+  margin-bottom: 10px !important;
+}
+
+.team-content ul li {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+}
+
+/* Remove hover transitions */
+.team-wrap:hover .team-content {
+  height: 150px !important; /* Same as default */
+}
+
+/* Adjust spacing for the flip link */
+.team-content span a {
+  position: relative;
+  bottom: 0 !important;
+  margin-top: 10px;
+  display: inline-block;
+}
+
+/* Keep flip functionality working */
+.team-flip-container {
+  perspective: 1000px;
+  height: 100%;
+}
+
+.team-flip-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+}
+
+/* 1. Remove red border and change to white - KEEPS FLIP FUNCTIONALITY */
+.team-content {
+  border: 1px solid #fff !important;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1) !important;
+  background: #fff !important;
+  /* Keep these positioning properties for flip to work: */
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+/* 2. Move text section down by increasing top padding */
+.team-content .team-info {
+  padding-top: 30px !important; /* Creates space below photo */
+}
+
+/* 3. Ensure flip container has proper height */
+.team-flip-container {
+  height: 400px; /* Adjust based on your content */
+}
+
+/* 4. Make sure View Profile link is visible */
+.team-content span a {
+  display: inline-block !important;
+  opacity: 1 !important;
+  position: relative !important;
+  bottom: auto !important;
+}
+
+/* Remove all default spacing */
+.team-flip-back * {
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+/* Set exact line spacing */
+.back-content {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 4px !important; /* Space between lines */
+}
+
+.back-content h3 {
+  line-height: 1 !important;
+  margin-bottom: 2px !important; /* Name to title gap */
+}
+
+.position {
+  line-height: 1.5 !important;
+  margin-bottom: 6px !important; /* Title to bio gap */
+}
+
+.bio {
+  line-height: 1.3 !important;
+}
+
+.flip-return {
+  margin-top: 12px !important; /* Space above button */
+}
+
+/* 1. Move the white box BELOW the photo (no overlap) */
+.team-content {
+  position: relative !important; /* Reset positioning */
+  top: auto !important;
+  left: auto !important;
+  margin-top: 30px !important; /* Space between photo & box */
+  transform: none !important;
+  width: 100% !important;
+}
+
+/* 2. Keep the white box styling (no red lines) */
+.team-content {
+  border: 1px solid #fff !important;
+  box-shadow: 5px 10px rgba(0,0,0,0.1) !important;
+  background: #fff !important;
+  padding: -20px !important;
+}
+
+/* 3. Ensure the photo has space below it */
+.team-img {
+  margin-bottom: 1px !important;
+}
+
+/* 4. Fix flip animation height */
+.team-flip-container {
+  min-height: 300px !important; /* Adjust based on content */
+}
+

@@ -42,7 +42,7 @@
                     <div class="left-side">
                         <!-- Logo -->
                         <div id="logo">
-                            <a href="index.html"><img src="images/logo-red.svg" alt=""></a>
+                            <a href="index.html"><img src="images/eezylets logo.png" alt=""></a>
                         </div>
                         <!-- Mobile Navigation -->
                         <div class="mmenu-trigger">
@@ -164,23 +164,119 @@
                     </div>
                 </div>
             </div>
-            
+
+ <!--Youtube Video start-->
+ 
             <div class="col-lg-6 col-md-12 col-xs-12">
                 <div class="wprt-image-video w50">
-                    <img alt="image" src="images/bg/bg-video.jpg" class="img-fluid">
-                    <a class="icon-wrap popup-video popup-youtube" href="https://www.youtube.com/watch?v=2xHQqYRcrx4">
-                        <i class="fa fa-play"></i>
-                    </a>
-                    <div class="iq-waves">
+                    <!--<img alt="image" src="images/bg/bg-video.jpg" class="img-fluid">
+                    <a class="icon-wrap popup-video popup-youtube" href="https://www.youtube.com/watch?v=2xHQqYRcrx4"> </a>-->
+                    
+                <!--<iframe id="youtube-video" width="560" height="315"
+                        src="https://www.youtube.com/embed/2xHQqYRcrx4?modestbranding=1&enablejsapi=1&showinfo=0&controls=1"
+                        frameborder="0" allow="autoplay; encrypted-media" allowfullscreen 
+                        style="padding-top: 40px;">
+                </iframe>-->
+
+                <div class="video-responsive-container">
+                    <div class="video-wrapper">
+                      <iframe id="youtube-video" 
+                              src="https://www.youtube.com/embed/2xHQqYRcrx4?modestbranding=1&enablejsapi=1&showinfo=0&controls=1" 
+                              frameborder="0" 
+                              allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" 
+                              allowfullscreen>
+                      </iframe>
+                    </div>
+                  </div>
+
+                        <!--<i class="fa fa-play"></i>
+                        <div class="iq-waves">
                         <div class="waves wave-1"></div>
                         <div class="waves wave-2"></div>
-                        <div class="waves wave-3"></div>
+                        <div class="waves wave-3"></div>-->
                     </div>
                 </div>
             </div>
         </div>
     </div>
 </section>
+
+<script>
+    function onYouTubeIframeAPIReady() {
+        var player = new YT.Player('youtube-video', {
+            events: {
+                'onStateChange': function(event) {
+                    if (event.data === YT.PlayerState.ENDED) { // When video ends
+                        player.seekTo(0, true); // Move to first frame
+                        player.pauseVideo(); // Stop auto replay
+                    }
+                }
+            }
+        });
+    }
+
+    // Load YouTube API script dynamically
+    var tag = document.createElement('script');
+    tag.src = "https://www.youtube.com/iframe_api";
+    var firstScriptTag = document.getElementsByTagName('script')[0];
+    firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+</script> 
+
+<style>
+    /* Responsive video container */
+    .wprt-image-video {
+      position: relative;
+      width: 100%;
+      overflow: hidden;
+      padding-top: 56.25%; /* 16:9 Aspect Ratio */
+    }
+    
+    /* Responsive iframe */
+    #youtube-video {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      padding-top: 0 !important; /* Override your inline style */
+    }
+    
+    /* Column adjustments for mobile */
+    @media (max-width: 768px) {
+      .col-lg-6, .col-md-12, .col-xs-12 {
+        width: 100%;
+        padding: 0 15px;
+      }
+      
+      .w50 {
+        width: 100% !important;
+      }
+    }
+  </style>
+  
+  
+  
+  <script>
+    function onYouTubeIframeAPIReady() {
+      var player = new YT.Player('youtube-video', {
+        events: {
+          'onStateChange': function(event) {
+            if (event.data === YT.PlayerState.ENDED) {
+              player.seekTo(0, true);
+              player.pauseVideo();
+            }
+          }
+        }
+      });
+    }
+  
+    var tag = document.createElement('script');
+    tag.src = "https://www.youtube.com/iframe_api";
+    var firstScriptTag = document.getElementsByTagName('script')[0];
+    firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+  </script>
+
+<!--Youtube Video End-->
 
 <!-- END SECTION ABOUT -->
 
@@ -280,111 +376,277 @@
         </section> -->
         <!-- END SECTION COUNTER UP -->
 
-        <!-- START SECTION AGENTS -->
-        <section class="team">
-            <div class="container">
-                <div class="sec-title">
-                    <h2><span>Our </span>Team</h2>
-                    <p>Meet the professionals behind our success.</p>
-                </div>
-                <div class="row team-all">
-                    <div class="col-lg-3 col-md-6 team-pro">
-                        <div class="team-wrap">
+<!-- START SECTION AGENTS -->
+<section class="team">
+    <div class="container">
+        <div class="sec-title">
+            <h2><span>Our </span>Team</h2>
+            <p>Meet the professionals behind our success.</p>
+        </div>
+        <div class="row team-all">
+            <!-- David Alagoa -->
+            <div class="col-lg-3 col-md-6 team-pro">
+                <div class="team-flip-container">
+                    <div class="team-flip-inner">
+                        <!-- Front Side -->
+                        <div class="team-flip-front team-wrap">
                             <div class="team-img">
-                                <img src="images/team/t-5.jpg" alt="" />
+                                <img src="images/team/t-5.jpg" alt="David Alagoa" />
                             </div>
                             <div class="team-content">
                                 <div class="team-info">
-                                    <h3>Carls Jhons</h3>
-                                    <p>Financial Advisor</p>
-                                    <div class="team-socials">
-                                        <ul>
-                                            <li>
-                                                <a href="#" title="facebook"><i class="fa fa-facebook" aria-hidden="true"></i></a>
-                                                <a href="#" title="twitter"><i class="fa fa-twitter" aria-hidden="true"></i></a>
-                                                <a href="#" title="instagran"><i class="fa fa-instagram" aria-hidden="true"></i></a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                    <span><a href="team-details.html">View Profile</a></span>
+                                    <h3>David Alagoa</h3>
+                                    <p>Head of Technology & Business Growth</p>
+                                    <span><button type="button" class="flip-profile">View Profile</button></span>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6 team-pro">
-                        <div class="team-wrap">
-                            <div class="team-img">
-                                <img src="images/team/t-6.jpg" alt="" />
-                            </div>
-                            <div class="team-content">
-                                <div class="team-info">
-                                    <h3>Arling Tracy</h3>
-                                    <p>Acountant</p>
-                                    <div class="team-socials">
-                                        <ul>
-                                            <li>
-                                                <a href="#" title="facebook"><i class="fa fa-facebook" aria-hidden="true"></i></a>
-                                                <a href="#" title="twitter"><i class="fa fa-twitter" aria-hidden="true"></i></a>
-                                                <a href="#" title="instagran"><i class="fa fa-instagram" aria-hidden="true"></i></a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                    <span><a href="team-details.html">View Profile</a></span>
+                        <!-- Back Side -->
+                        <div class="team-flip-back">
+                            <div class="back-content">
+                                <h3>David Alagoa</h3>
+                                <p class="position">Head of Technology & Business Growth</p>
+                                <div class="bio">
+                                    <p>As Head of Technology & Business Growth, he leverages deep IT expertise and strategic vision to propel business expansion. His focus is on implementing cutting-edge technologies and organic strategies for sustainable growth.</p>
                                 </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6 team-pro pb-none">
-                        <div class="team-wrap">
-                            <div class="team-img">
-                                <img src="images/team/t-7.jpg" alt="" />
-                            </div>
-                            <div class="team-content">
-                                <div class="team-info">
-                                    <h3>Mark Web</h3>
-                                    <p>Founder &amp; CEO</p>
-                                    <div class="team-socials">
-                                        <ul>
-                                            <li>
-                                                <a href="#" title="facebook"><i class="fa fa-facebook" aria-hidden="true"></i></a>
-                                                <a href="#" title="twitter"><i class="fa fa-twitter" aria-hidden="true"></i></a>
-                                                <a href="#" title="instagran"><i class="fa fa-instagram" aria-hidden="true"></i></a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                    <span><a href="team-details.html">View Profile</a></span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6 team-pro kat">
-                        <div class="team-wrap">
-                            <div class="team-img">
-                                <img src="images/team/t-8.jpg" alt="" />
-                            </div>
-                            <div class="team-content">
-                                <div class="team-info">
-                                    <h3>Katy Grace</h3>
-                                    <p>Team Leader</p>
-                                    <div class="team-socials">
-                                        <ul>
-                                            <li>
-                                                <a href="#" title="facebook"><i class="fa fa-facebook" aria-hidden="true"></i></a>
-                                                <a href="#" title="twitter"><i class="fa fa-twitter" aria-hidden="true"></i></a>
-                                                <a href="#" title="instagran"><i class="fa fa-instagram" aria-hidden="true"></i></a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                    <span><a href="team-details.html">View Profile</a></span>
-                                </div>
+                                <button type="button" class="flip-return">Return</button>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </section>
-        <!-- END SECTION AGENTS -->
 
+            <!-- Adolphus Pepple -->
+            <div class="col-lg-3 col-md-6 team-pro">
+                <div class="team-flip-container">
+                    <div class="team-flip-inner">
+                        <!-- Front Side -->
+                        <div class="team-flip-front team-wrap">
+                            <div class="team-img">
+                                <img src="images/team/t-6.jpg" alt="Adolphus Pepple"/>
+                            </div>
+                            <div class="team-content">
+                                <div class="team-info">
+                                    <h3>Adolphus Pepple</h3>
+                                    <p>Chairman & Strategic Advisor</p>
+                                    <span><button type="button" class="flip-profile">View Profile</button></span>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Back Side -->
+                        <div class="team-flip-back">
+                            <div class="back-content">
+                                <h3>Adolpus Pepple</h3>
+                                <p class="position">Chairman & Strategic Advisor</p>
+                                <div class="bio">
+                                    <p>In his role as Chairman & Strategic Advisor, he brings invaluable experience cultivated over a long and successful career. His strategic insight and deep understanding of financial principles are crucial in maintaining stability and guiding the company's financial direction, fostering sustainable growth and mitigating potential risks.</p>
+                                </div>
+                                <button type="button" class="flip-return">Return</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Grace Ekoma -->
+            <div class="col-lg-3 col-md-6 team-pro pb-none">
+                <div class="team-flip-container">
+                    <div class="team-flip-inner">
+                        <!-- Front Side -->
+                        <div class="team-flip-front team-wrap">
+                            <div class="team-img">
+                                <img src="images/team/t-7.jpg" alt="Grace Ekoma" />
+                            </div>
+                            <div class="team-content">
+                                <div class="team-info">
+                                    <h3>Grace Ekoma</h3>
+                                    <p>Operations & Client Relations Manager</p>
+                                    <span><button type="button" class="flip-profile">View Profile</button></span>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Back Side -->
+                        <div class="team-flip-back">
+                            <div class="back-content">
+                                <h3>Grace Ekoma</h3>
+                                <p class="position">Operations & Client Relations Manager</p>
+                                <div class="bio">
+                                    <p>Grace Ekoma excels as Operations & Client Relations Manager, where she builds strong client relationships and maintains operational excellence. Her commitment to customer satisfaction makes her an invaluable asset to the team.</p>
+                                </div>
+                                <button type="button" class="flip-return">Return</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sotonye Afiesimama-->
+            <div class="col-lg-3 col-md-6 team-pro kat">
+                <div class="team-flip-container">
+                    <div class="team-flip-inner">
+                        <!-- Front Side -->
+                        <div class="team-flip-front team-wrap">
+                            <div class="team-img">
+                                <img src="images/team/t-8.jpg" alt="Sotonye Afiesimama" />
+                            </div>
+                            <div class="team-content">
+                                <div class="team-info">
+                                    <h3>Sotonye Afiesimama</h3>
+                                    <p>Founder & Managing Director</p>
+                                    <span><button type="button" class="flip-profile">View Profile</button></span>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Back Side -->
+                        <div class="team-flip-back">
+                            <div class="back-content">
+                                <h3>Sotonye Afiesimama</h3>
+                                <p class="position">Founder & Managing Director</p>
+                                <div class="bio">
+                                    <p>Sotonye Afiesimama, Founder & Managing Director, is the architect of the team and the driving force behind the company's success. As a visionary leader, he inspires action, fosters collaboration, and steers the company towards sustained growth and achievement.</p>
+                                </div>
+                                <button type="button" class="flip-return">Return</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<style>
+    /* Flip Card Styles */
+    .team-flip-container {
+        perspective: 1000px;
+        height: 180%;
+        margin-bottom: 30px;
+        position: relative;
+    }
+    
+    .team-flip-inner {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        transition: transform 0.6s ease;
+        transform-style: preserve-3d;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+    
+    .team-flip-container.flipped .team-flip-inner {
+        transform: rotateY(180deg);
+    }
+    
+    .team-flip-front, .team-flip-back {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        backface-visibility: hidden;
+        -webkit-backface-visibility: hidden;
+        top: 0;
+        left: 0;
+    }
+    
+    .team-flip-back {
+        background: #fff;
+        transform: rotateY(180deg);
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        border-radius: 0;
+    }
+    
+    .back-content {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        padding: 15px;
+    }
+    
+    .back-content h3 {
+        margin-bottom: 5px;
+        color: #274abb;
+    }
+    
+    .position {
+        color: #777;
+        margin-bottom: 15px;
+    }
+    
+    .bio {
+        margin-bottom: 20px;
+    }
+    
+    .flip-profile, .flip-return {
+        background: none;
+        border: none;
+        color: inherit;
+        padding: 0;
+        font: inherit;
+        cursor: pointer;
+        text-decoration: underline;
+        display: inline;
+    }
+    
+    .flip-return {
+        display: inline-block;
+        padding: 8px 20px;
+        background: #274abb;
+        color: white;
+        border-radius: 4px;
+        text-decoration: none;
+        transition: all 0.3s ease;
+    }
+    
+    .flip-return:hover {
+        background: #1a3490;
+    }
+    
+    .team-wrap {
+        height: 100%;
+        margin: 0;
+    }
+
+    
+</style>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // Set equal heights for all cards
+        function setEqualHeights() {
+            const cards = document.querySelectorAll('.team-flip-container');
+            let maxHeight = 0;
+            
+            // Reset heights first
+            cards.forEach(card => {
+                card.style.height = 'auto';
+                const frontHeight = card.querySelector('.team-flip-front').offsetHeight;
+                maxHeight = Math.max(maxHeight, frontHeight);
+            });
+            
+            // Apply max height
+            cards.forEach(card => {
+                card.style.height = `${maxHeight}px`;
+            });
+        }
+
+        // Flip functionality
+        document.querySelectorAll('.flip-profile, .flip-return').forEach(button => {
+            button.addEventListener('click', function(e) {
+                e.preventDefault();
+                e.stopPropagation();
+                const container = this.closest('.team-flip-container');
+                container.classList.toggle('flipped');
+            });
+        });
+
+        // Initialize heights
+        setEqualHeights();
+        window.addEventListener('resize', setEqualHeights);
+    });
+</script>
+<!-- END SECTION AGENTS -->
        
         <!-- STAR SECTION PARTNERS -->
         <div class="partners bg-white-2">

@@ -390,7 +390,7 @@ jQuery(document).on('ready', function ($) {
     /*----------------------------------
     //------ MAGNIFIC POPUP ------//
     -----------------------------------*/
-    $(document).ready(function () {
+    /*$(document).ready(function () {
         $('.popup-youtube, .popup-vimeo, .popup-gmaps').magnificPopup({
             disableOn: 700,
             type: 'iframe',
@@ -400,6 +400,8 @@ jQuery(document).on('ready', function ($) {
             fixedContentPos: false
         });
     });
+
+    
 
     /*----------------------------------------------
     //------ FILTER TOGGLE (ON GOOGLE MAPS) ------//
@@ -452,7 +454,42 @@ jQuery(document).on('ready', function ($) {
         $(b).fadeIn();
     });
 
-    console.log("Script.js is running on this page.");
-
-
+    // Add this to your existing JavaScript or create a new file
+    $(document).ready(function() {
+    // Login form submission
+    $('form[name="registerform"]').submit(function(e) {
+        e.preventDefault();
+        $.ajax({
+            type: "POST",
+            url: "login-process.php",
+            data: $(this).serialize(),
+            success: function(response) {
+                if (response === "success") {
+                    window.location.href = "user-profile.html";
+                } else {
+                    alert(response);
+                }
+            }
+        });
+    });
+    
+    // Registration form submission
+    $('#main-register-form2').submit(function(e) {
+        e.preventDefault();
+        $.ajax({
+            type: "POST",
+            url: "register-process.php",
+            data: $(this).serialize(),
+            success: function(response) {
+                if (response === "success") {
+                    alert("Registration successful! You can now login.");
+                    window.location.href = "login.html";
+                } else {
+                    alert(response);
+                }
+            }
+        });
+    });
+});
+    
 }(jQuery));

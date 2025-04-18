@@ -7,7 +7,7 @@
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="description" content="html 5 template">
     <meta name="author" content="">
-    <title>Blog</title>
+    <title>Blog Details</title>
     <!-- FAVICON -->
     <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
     <!-- GOOGLE FONTS -->
@@ -27,6 +27,7 @@
 </head>
 
 <body class="inner-pages hd-white">
+    <!-- START SECTION HEADINGS -->
     <!-- Wrapper -->
     <div id="wrapper">
         <!-- START SECTION HEADINGS -->
@@ -40,7 +41,7 @@
                     <div class="left-side">
                         <!-- Logo -->
                         <div id="logo">
-                            <a href="index.html"><img src="images/eezylets_logo_Rev1.svg" alt=""></a>
+                            <a href="index.html"><img src="images/logo-red.svg" alt=""></a>
                         </div>
                         <!-- Mobile Navigation -->
                         <div class="mmenu-trigger">
@@ -50,8 +51,8 @@
                                 </span>
                             </button>
                         </div>
-                         <!-- Main Navigation -->
-                         <nav id="navigation" class="style-1">
+                        <!-- Main Navigation -->
+                        <nav id="navigation" class="style-1">
                             <ul id="responsive">
                                 <li><a href="index.html">Home</a> </li>
                                 <li><a href="about.html">About</a></li>                       
@@ -68,19 +69,19 @@
                         </nav>
                         <!-- Main Navigation / End -->
                     </div>
-                    <!-- Left Side Content / End -->
-
+                    <!-- Left Side Content / End -->                     
+                      <!-- Right Side Content / --> 
                     <!-- Right Side Content / End -->
                     <div class="right-side d-none d-none d-lg-none d-xl-flex">
                         <!-- Header Widget -->
                         <div class="header-widget">
-                            <a href="add-property.html" class="button border">Add Property<i class="fas fa-laptop-house ml-2"></i></a>
+                            <a href="add-property.html" class="button border">Add Listing<i class="fas fa-laptop-house ml-2"></i></a>
                         </div>
                         <!-- Header Widget / End -->
                     </div>
                     <!-- Right Side Content / End -->
 
-
+                    <!-- Right Side Content / End -->
                     <div class="header-user-menu user-menu add">
                         <div class="header-user-name">
                             <span><img src="images/testimonials/ts-1.jpg" alt=""></span>Hi, Mary!
@@ -129,27 +130,27 @@
         <section class="headings">
             <div class="text-heading text-center">
                 <div class="container">
-                    <h1>Blog</h1>
-                    <h2><a href="index.html">Home </a> &nbsp;/&nbsp; Blog</h2>
+                    <h1>Blog Details</h1>
+                    <h2><a href="index.html">Home </a> &nbsp;/&nbsp; Blog Details</h2>
                 </div>
             </div>
         </section>
         <!-- END SECTION HEADINGS -->
 
         <!-- START SECTION BLOG -->
-        <section class="blog blog-section">
+        <section class="blog blog-section bg-white">
             <div class="container">
                 <div class="row">
-                    <div class="col-lg-9 col-md-12 col-xs-12">
+                    <div class="col-lg-9 col-md-12 blog-pots">
                         <div class="row">
-                            <div class="col-md-6 col-xs-12">
-                                <div class="news-item nomb">
+                            <div class="col-md-12 col-xs-12">
+                                <div class="news-item details no-mb2">
                                     <a href="blog-details.html" class="news-img-link">
                                         <div class="news-item-img">
                                             <img class="img-responsive" src="images/blog/b-1.jpg" alt="blog image">
                                         </div>
                                     </a>
-                                    <div class="news-item-text">
+                                    <div class="news-item-text details pb-0">
                                         <a href="blog-details.html"><h3>Real Estate News</h3></a>
                                         <div class="dates">
                                             <span class="date">April 11, 2020 &nbsp;/</span>
@@ -159,174 +160,88 @@
                                                 <li class="action-item"><i class="fa fa-share-alt"></i> <span>122</span></li>
                                             </ul>
                                         </div>
-                                        <div class="news-item-descr big-news">
-                                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ipsum dolor sit amet, consectetur Real Estate News.</p>
-                                        </div>
-                                        <div class="news-item-bottom">
-                                            <a href="blog-details.html" class="news-link">Read more...</a>
-                                            <div class="admin">
-                                                <p>By, Karl Smith</p>
-                                                <img src="images/testimonials/ts-1.jpg" alt="">
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-6 col-xs-12">
-                                <div class="news-item">
-                                    <a href="blog-details.html" class="news-img-link">
-                                        <div class="news-item-img">
-                                            <img class="img-responsive" src="images/blog/b-2.jpg" alt="blog image">
-                                        </div>
-                                    </a>
-                                    <div class="news-item-text">
-                                        <a href="blog-details.html"><h3>Real Estate News</h3></a>
-                                        <div class="dates">
-                                            <span class="date">April 11, 2020 &nbsp;/</span>
-                                            <ul class="action-list pl-0">
-                                                <li class="action-item pl-2"><i class="fa fa-heart"></i> <span>306</span></li>
-                                                <li class="action-item"><i class="fa fa-comment"></i> <span>34</span></li>
-                                                <li class="action-item"><i class="fa fa-share-alt"></i> <span>122</span></li>
-                                            </ul>
-                                        </div>
-                                        <div class="news-item-descr big-news">
-                                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ipsum dolor sit amet, consectetur Real Estate News.</p>
-                                        </div>
-                                        <div class="news-item-bottom">
-                                            <a href="blog-details.html" class="news-link">Read more...</a>
-                                            <div class="admin">
-                                                <p>By, Karl Smith</p>
-                                                <img src="images/testimonials/ts-2.jpg" alt="">
-                                            </div>
+                                        <div class="news-item-descr big-news details visib mb-0">
+                                            <p class="mb-3">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem, ea? Vitae pariatur ab amet iusto tempore neque a, deserunt eaque recusandae obcaecati eos atque delectus. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi labore vel enim repellendus excepturi autem. Eligendi cum laboriosam exercitationem illum repudiandae quasi sint dicta consectetur porro fuga ea, perspiciatis aut!</p>
+
+                                            <p class="d-none d-sm-none d-lg-block d-md-block">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem, ea? Vitae pariatur ab amet iusto tempore neque a, deserunt eaque recusandae obcaecati eos atque delectus. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi labore vel enim repellendus excepturi autem. Eligendi cum laboriosam exercitationem illum repudiandae quasi sint dicta consectetur porro fuga ea, perspiciatis aut!</p>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="row space2 port">
-                            <div class="col-md-6 col-xs-12">
-                                <div class="news-item">
-                                    <a href="blog-details.html" class="news-img-link">
-                                        <div class="news-item-img">
-                                            <img class="img-responsive" src="images/blog/b-3.jpg" alt="blog image">
+                        <section class="comments">
+                            <h3 class="mb-5">5 Comments</h3>
+                            <div class="row mb-4">
+                                <ul class="col-12 commented">
+                                    <li class="comm-inf">
+                                        <div class="col-md-2">
+                                            <img src="images/testimonials/ts-4.jpg" class="img-fluid" alt="">
                                         </div>
-                                    </a>
-                                    <div class="news-item-text">
-                                        <a href="blog-details.html"><h3>Real Estate News</h3></a>
-                                        <div class="dates">
-                                            <span class="date">April 11, 2020 &nbsp;/</span>
-                                            <ul class="action-list pl-0">
-                                                <li class="action-item pl-2"><i class="fa fa-heart"></i> <span>306</span></li>
-                                                <li class="action-item"><i class="fa fa-comment"></i> <span>34</span></li>
-                                                <li class="action-item"><i class="fa fa-share-alt"></i> <span>122</span></li>
-                                            </ul>
+                                        <div class="col-md-10 comments-info">
+                                            <h5 class="mb-1">Mario Smith</h5>
+                                            <p class="mb-4">Jun 23, 2020</p>
+                                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras aliquam, quam congue dictum luctus, lacus magna congue ante, in finibus dui sapien eu dolor. Integer tincidunt suscipit erat, nec laoreet ipsum vestibulum sed.</p>
                                         </div>
-                                        <div class="news-item-descr big-news">
-                                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ipsum dolor sit amet, consectetur Real Estate News.</p>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="row ml-5">
+                                <ul class="col-12 commented">
+                                    <li class="comm-inf">
+                                        <div class="col-md-2">
+                                            <img src="images/testimonials/ts-5.jpg" class="img-fluid" alt="">
                                         </div>
-                                        <div class="news-item-bottom">
-                                            <a href="blog-details.html" class="news-link">Read more...</a>
-                                            <div class="admin">
-                                                <p>By, Karl Smith</p>
-                                                <img src="images/testimonials/ts-3.jpg" alt="">
+                                        <div class="col-md-10 comments-info">
+                                            <h5 class="mb-1">Mary Tyron</h5>
+                                            <p class="mb-4">Jun 23, 2020</p>
+                                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras aliquam, quam congue dictum luctus, lacus magna congue ante, in finibus dui sapien eu dolor. Integer tincidunt suscipit erat, nec laoreet ipsum vestibulum sed.</p>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="row my-4">
+                                <ul class="col-12 commented">
+                                    <li class="comm-inf">
+                                        <div class="col-md-2">
+                                            <img src="images/testimonials/ts-6.jpg" class="img-fluid" alt="">
+                                        </div>
+                                        <div class="col-md-10 comments-info no-mb">
+                                            <h5 class="mb-1">Leo Williams</h5>
+                                            <p class="mb-4">Jun 23, 2020</p>
+                                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras aliquam, quam congue dictum luctus, lacus magna congue ante, in finibus dui sapien eu dolor. Integer tincidunt suscipit erat, nec laoreet ipsum vestibulum sed.</p>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </section>
+                        <section class="leve-comments wpb">
+                            <h3 class="mb-5">Leave a Comment</h3>
+                            <div class="row">
+                                <div class="col-md-12 data">
+                                    <form action="#">
+                                        <div class="col-md-12">
+                                            <div class="form-group">
+                                                <input type="text" name="name" class="form-control" placeholder="First Name" required>
                                             </div>
                                         </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-6 col-xs-12">
-                                <div class="news-item">
-                                    <a href="blog-details.html" class="news-img-link">
-                                        <div class="news-item-img">
-                                            <img class="img-responsive" src="images/blog/b-4.jpg" alt="blog image">
-                                        </div>
-                                    </a>
-                                    <div class="news-item-text">
-                                        <a href="blog-details.html"><h3>Real Estate News</h3></a>
-                                        <div class="dates">
-                                            <span class="date">April 11, 2020 &nbsp;/</span>
-                                            <ul class="action-list pl-0">
-                                                <li class="action-item pl-2"><i class="fa fa-heart"></i> <span>306</span></li>
-                                                <li class="action-item"><i class="fa fa-comment"></i> <span>34</span></li>
-                                                <li class="action-item"><i class="fa fa-share-alt"></i> <span>122</span></li>
-                                            </ul>
-                                        </div>
-                                        <div class="news-item-descr big-news">
-                                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ipsum dolor sit amet, consectetur Real Estate News.</p>
-                                        </div>
-                                        <div class="news-item-bottom">
-                                            <a href="blog-details.html" class="news-link">Read more...</a>
-                                            <div class="admin">
-                                                <p>By, Karl Smith</p>
-                                                <img src="images/testimonials/ts-4.jpg" alt="">
+                                        <div class="col-md-12">
+                                            <div class="form-group">
+                                                <input type="text" name="name" class="form-control" placeholder="Last Name" required>
                                             </div>
                                         </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-6 col-xs-12 no-mb wpt-2">
-                                <div class="news-item">
-                                    <a href="blog-details.html" class="news-img-link">
-                                        <div class="news-item-img">
-                                            <img class="img-responsive" src="images/blog/b-5.jpg" alt="blog image">
-                                        </div>
-                                    </a>
-                                    <div class="news-item-text">
-                                        <a href="blog-details.html"><h3>Real Estate News</h3></a>
-                                        <div class="dates">
-                                            <span class="date">April 11, 2020 &nbsp;/</span>
-                                            <ul class="action-list pl-0">
-                                                <li class="action-item pl-2"><i class="fa fa-heart"></i> <span>306</span></li>
-                                                <li class="action-item"><i class="fa fa-comment"></i> <span>34</span></li>
-                                                <li class="action-item"><i class="fa fa-share-alt"></i> <span>122</span></li>
-                                            </ul>
-                                        </div>
-                                        <div class="news-item-descr big-news">
-                                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ipsum dolor sit amet, consectetur Real Estate News.</p>
-                                        </div>
-                                        <div class="news-item-bottom">
-                                            <a href="blog-details.html" class="news-link">Read more...</a>
-                                            <div class="admin">
-                                                <p>By, Karl Smith</p>
-                                                <img src="images/testimonials/ts-5.jpg" alt="">
+                                        <div class="col-md-12">
+                                            <div class="form-group">
+                                                <input type="email" name="email" class="form-control" placeholder="Email" required>
                                             </div>
                                         </div>
-                                    </div>
+                                        <div class="col-md-12 form-group">
+                                            <textarea class="form-control" id="exampleTextarea" rows="8" placeholder="Message" required></textarea>
+                                        </div>
+                                        <button type="submit" class="btn btn-primary btn-lg mt-2">Submit Comment</button>
+                                    </form>
                                 </div>
                             </div>
-                            <div class="col-md-6 col-xs-12 no-mb wpt-2">
-                                <div class="news-item">
-                                    <a href="blog-details.html" class="news-img-link">
-                                        <div class="news-item-img">
-                                            <img class="img-responsive" src="images/blog/b-6.jpg" alt="blog image">
-                                        </div>
-                                    </a>
-                                    <div class="news-item-text">
-                                        <a href="blog-details.html"><h3>Real Estate News</h3></a>
-                                        <div class="dates">
-                                            <span class="date">April 11, 2020 &nbsp;/</span>
-                                            <ul class="action-list pl-0">
-                                                <li class="action-item pl-2"><i class="fa fa-heart"></i> <span>306</span></li>
-                                                <li class="action-item"><i class="fa fa-comment"></i> <span>34</span></li>
-                                                <li class="action-item"><i class="fa fa-share-alt"></i> <span>122</span></li>
-                                            </ul>
-                                        </div>
-                                        <div class="news-item-descr big-news">
-                                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ipsum dolor sit amet, consectetur Real Estate News.</p>
-                                        </div>
-                                        <div class="news-item-bottom">
-                                            <a href="blog-details.html" class="news-link">Read more...</a>
-                                            <div class="admin">
-                                                <p>By, Karl Smith</p>
-                                                <img src="images/testimonials/ts-6.jpg" alt="">
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                        </section>
                     </div>
                     <aside class="col-lg-3 col-md-12">
                         <div class="widget">
@@ -367,8 +282,8 @@
                                     <span><a href="#" class="btn btn-outline-primary">Properties</a></span>
                                 </div>
                                 <div class="tags">
-                                    <span><a href="#" class="btn btn-outline-primary mb-0">Location</a></span>
-                                    <span><a href="#" class="btn btn-outline-primary mb-0">Price</a></span>
+                                    <span><a href="#" class="btn btn-outline-primary">Location</a></span>
+                                    <span><a href="#" class="btn btn-outline-primary">Price</a></span>
                                 </div>
                             </div>
                             <div class="recent-post pt-5">
@@ -391,7 +306,7 @@
                                         <p>May 10, 2020</p>
                                     </div>
                                 </div>
-                                <div class="recent-main">
+                                <div class="recent-main no-mb">
                                     <div class="recent-img">
                                         <a href="blog-details.html"><img src="images/blog/b-3.jpg" alt=""></a>
                                     </div>
@@ -404,23 +319,6 @@
                         </div>
                     </aside>
                 </div>
-                <nav aria-label="..." class="pt-5">
-                    <ul class="pagination">
-                        <li class="page-item disabled">
-                            <a class="page-link" href="#" tabindex="-1">Previous</a>
-                        </li>
-                        <li class="page-item active">
-                            <a class="page-link" href="#">1 <span class="sr-only">(current)</span></a>
-                        </li>
-                        <li class="page-item"><a class="page-link" href="#">2</a></li>
-                        <li class="page-item"><a class="page-link" href="#">3</a></li>
-                        <li class="page-item"><a class="page-link" href="#">3</a></li>
-                        <li class="page-item"><a class="page-link" href="#">5</a></li>
-                        <li class="page-item">
-                            <a class="page-link" href="#">Next</a>
-                        </li>
-                    </ul>
-                </nav>
             </div>
         </section>
         <!-- END SECTION BLOG -->
