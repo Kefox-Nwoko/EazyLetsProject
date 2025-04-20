@@ -454,42 +454,76 @@ jQuery(document).on('ready', function ($) {
         $(b).fadeIn();
     });
 
-    // Add this to your existing JavaScript or create a new file
-    $(document).ready(function() {
-    // Login form submission
-    $('form[name="registerform"]').submit(function(e) {
-        e.preventDefault();
-        $.ajax({
-            type: "POST",
-            url: "login-process.php",
-            data: $(this).serialize(),
-            success: function(response) {
-                if (response === "success") {
-                    window.location.href = "user-profile.html";
-                } else {
-                    alert(response);
-                }
+// Login form submission (for modal login)
+$('#login-form').submit(function(e) {
+    e.preventDefault();
+
+    const $form = $(this);
+    const $btn = $form.find('button[type="submit"]');
+    $btn.prop('disabled', true).text('Logging in...');
+
+    $.ajax({
+        type: "POST",
+        url: "login-process.php",
+        data: $form.serialize(),
+        success: function(response) {
+            $btn.prop('disabled', false).text('Log In');
+
+            if (response.trim() === "success") {
+                $('#registration-success').hide(); // Just in case
+                $('<div class="text-success mb-3">Login successful! Redirecting...</div>').insertBefore($btn);
+                setTimeout(() => window.location.href = "user-profile.html", 1500);
+            } else {
+                $('<div class="text-danger mb-3">Login failed: ' + response + '</div>').insertBefore($btn);
             }
-        });
-    });
-    
-    // Registration form submission
-    $('#main-register-form2').submit(function(e) {
-        e.preventDefault();
-        $.ajax({
-            type: "POST",
-            url: "register-process.php",
-            data: $(this).serialize(),
-            success: function(response) {
-                if (response === "success") {
-                    alert("Registration successful! You can now login.");
-                    window.location.href = "login.html";
-                } else {
-                    alert(response);
-                }
-            }
-        });
+        },
+        error: function(xhr) {
+            $btn.prop('disabled', false).text('Log In');
+            $('<div class="text-danger mb-3">Server error. Please try again later.</div>').
+            insertBefore($btn);
+        }
     });
 });
+    
+ // Registration form submission
+$('#main-register-form2').submit(function(e) {
+    e.preventDefault();
+
+    const $form = $(this);
+    const $btn = $form.find('button[type="submit"]');
+
+    // Clear any existing messages
+    $('.text-danger, .text-success').remove();
+
+    $btn.prop('disabled', true).text('Registering...');
+
+    $.ajax({
+        type: "POST",
+        url: "register-process.php",
+        data: $form.serialize(),
+        success: function(response) {
+            $btn.prop('disabled', false).text('Register');
+
+            // Clear again just in case of race condition
+            $('.text-danger, .text-success').remove();
+
+            if (response.trim() === "success") {
+                $('<div class="text-success mb-3">Registration successful! Redirecting to login...</div>')
+                    .insertBefore($btn);
+                setTimeout(() => window.location.href = "login.html", 2000);
+            } else {
+                $('<div class="text-danger mb-3">Registration failed: ' + response + '</div>')
+                    .insertBefore($btn);
+            }
+        },
+        error: function(xhr) {
+            $btn.prop('disabled', false).text('Register');
+            $('.text-danger, .text-success').remove();
+            $('<div class="text-danger mb-3">Server error. Please try again later.</div>')
+                .insertBefore($btn);
+        }
+    });
+});
+
     
 }(jQuery));
