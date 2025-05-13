@@ -1,13 +1,13 @@
 <!DOCTYPE html>
-<html lang="zxx">
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <meta name="description" content="html 5 template">
+    <meta name="description" content="User Profile Page">
     <meta name="author" content="">
-    <title>User-Profile</title>
+    <title>User Profile</title>
     <!-- FAVICON -->
     <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
     <link rel="stylesheet" href="css/jquery-ui.css">
@@ -30,8 +30,6 @@
     <link rel="stylesheet" href="css/slick.css">
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" id="color" href="css/colors/darkblue.css">
-    <script type="module" src="/js/firebase-auth.js"></script>
-    
 </head>
 
 <body class="maxw1600 m0a dashboard-bd">
@@ -83,14 +81,14 @@
 
                         <div class="header-user-menu user-menu">
                             <div class="header-user-name">
-                                <span><img src="images/testimonials/ts-1.jpg" alt=""></span>Hi, Mary!
+                                <span><img src="images/testimonials/ts-1.jpg" alt=""></span>Hi, User!
                             </div>
                             <ul>
                                 <li><a href="user-profile.html"> Edit profile</a></li>
                                 <li><a href="add-property.html"> Add Property</a></li>
                                 <li><a href="payment-method.html">  Payments</a></li>
                                 <li><a href="change-password.html"> Change Password</a></li>
-                                <li><a href="#">Log Out</a></li>
+                                <li><a href="logout.html">Log Out</a></li>
                             </ul>
                         </div>
                         <!-- Right Side Content / End -->
@@ -110,10 +108,10 @@
                         <div class="user-profile-box mb-0">
                             <div class="sidebar-header"><img src="images/logo-blue.svg" alt="header-logo2.png"> </div>
                             <div class="header clearfix">
-                                <img src="images/testimonials/ts-1.jpg" alt="avatar" class="img-fluid profile-img">
+                                <img id="profile-image" src="default-avatar.png" alt="avatar" class="img-fluid profile-img">
                             </div>
                             <div class="active-user">
-                                <h2>Mary Smith</h2>
+                                <h2 id="user-name">User Name</h2>
                             </div>
                             <div class="detail clearfix">
                                 <ul class="mb-0">
@@ -158,7 +156,7 @@
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="index.html">
+                                        <a href="logout.html">
                                             <i class="fas fa-sign-out-alt"></i>Log Out
                                         </a>
                                     </li>
@@ -213,7 +211,7 @@
                                             </a>
                                         </li>
                                         <li>
-                                            <a href="index.html">
+                                            <a href="logout.html">
                                                 <i class="fas fa-sign-out-alt mr-3"></i>Log Out
                                             </a>
                                         </li>
@@ -226,8 +224,8 @@
                         </div>
                         <div class="sidebar-widget author-widget2">
                             <div class="author-box clearfix">
-                                <img src="images/testimonials/ts-1.jpg" alt="author-image" class="author__img">
-                                <h4 class="author__title">Lisa Clark</h4>
+                                <img id="profile-image" src="default-avatar.png" alt="author-image" class="author__img">
+                                <h4 class="author__title" id="user-name">User Name</h4>
                                 <p class="author__meta">Agent of Property</p>
                             </div>
                             <ul class="author__contact">
@@ -298,6 +296,28 @@
         <script src="js/forms-2.js"></script>
         <script src="js/color-switcher.js"></script>
 
+        <!-- Firebase SDK -->
+        <script src="https://www.gstatic.com/firebasejs/8.2.0/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/8.2.0/firebase-auth.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/8.2.0/firebase-firestore.js"></script>
+
+        <!-- Firebase configuration -->
+        <script>
+          // Your web app's Firebase configuration
+          var firebaseConfig = {
+               apiKey: "API_KEY_",
+               authDomain: "PROJECT_ID.firebaseapp.com",
+               databaseURL: "https://PROJECT_ID.firebaseio.com",
+               projectId: "PROJECT_ID",
+               storageBucket: "PROJECT_ID.appspot.com",
+               messagingSenderId: "SENDER_ID",
+               appId: "APP_ID"
+            };
+
+            // Initialize Firebase
+            firebase.initializeApp(firebaseConfig);
+        </script>
+
         <!-- MAIN JS -->
         <script src="js/script.js"></script>
 
@@ -307,12 +327,22 @@
                 $(this).toggleClass("hu-menu-visdec");
             });
 
+            // Listen for auth state changes
+            firebase.auth().onAuthStateChanged((user) => {
+                if (user) {
+                    // User is signed in
+                    var user = firebase.auth().currentUser;
+                    document.getElementById('user-name').textContent = `Hi, ${user.displayName}!`;
+                    document.getElementById('profile-image').src = user.photoURL || 'default-avatar.png';
+                } else {
+                    // No user is signed in.
+                    window.location.href = 'login.html'; // Redirect to login page
+                }
+            });
         </script>
 
     </div>
     <!-- Wrapper / End -->
-
-
 </body>
 
 </html>

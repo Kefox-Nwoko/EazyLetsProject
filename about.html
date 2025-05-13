@@ -26,6 +26,8 @@
     <link rel="stylesheet" href="css/slick.css">
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" id="color" href="css/colors/darkblue.css">
+    <script type="module" src="/js/firebase-auth.js"></script>
+    
 </head>
 
 <body class="inner-pages hd-white">
@@ -139,7 +141,6 @@
         </section>
         <!-- END SECTION HEADINGS -->
 
-<!-- START SECTION ABOUT -->
 <!-- START SECTION ABOUT -->
 <section class="about-us fh" style="margin-bottom: 20px;"> <!-- Reduced bottom margin -->
     <div class="container">
@@ -384,37 +385,6 @@
             <p>Meet the professionals behind our success.</p>
         </div>
         <div class="row team-all">
-            <!-- David Alagoa -->
-            <div class="col-lg-3 col-md-6 team-pro">
-                <div class="team-flip-container">
-                    <div class="team-flip-inner">
-                        <!-- Front Side -->
-                        <div class="team-flip-front team-wrap">
-                            <div class="team-img">
-                                <img src="images/team/t-5.jpg" alt="David Alagoa" />
-                            </div>
-                            <div class="team-content">
-                                <div class="team-info">
-                                    <h3>David Alagoa</h3>
-                                    <p>Head of Technology & Business Growth</p>
-                                    <span><button type="button" class="flip-profile">View Profile</button></span>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- Back Side -->
-                        <div class="team-flip-back">
-                            <div class="back-content">
-                                <h3>David Alagoa</h3>
-                                <p class="position">Head of Technology & Business Growth</p>
-                                <div class="bio">
-                                    <p>As Head of Technology & Business Growth, he leverages deep IT expertise and strategic vision to propel business expansion. His focus is on implementing cutting-edge technologies and organic strategies for sustainable growth.</p>
-                                </div>
-                                <button type="button" class="flip-return">Return</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
 
             <!-- Adolphus Pepple -->
             <div class="col-lg-3 col-md-6 team-pro">
@@ -436,10 +406,9 @@
                         <!-- Back Side -->
                         <div class="team-flip-back">
                             <div class="back-content">
-                                <h3>Adolpus Pepple</h3>
-                                <p class="position">Chairman & Strategic Advisor</p>
-                                <div class="bio">
-                                    <p>In his role as Chairman & Strategic Advisor, he brings invaluable experience cultivated over a long and successful career. His strategic insight and deep understanding of financial principles are crucial in maintaining stability and guiding the company's financial direction, fostering sustainable growth and mitigating potential risks.</p>
+                                <p class="position"> <h3>Adolphus Pepple</h3> <h5>Chairman & Strategic Advisor</h5></p>
+                                 <div class="bio">
+                                 <p>In his role as Chairman & Strategic Advisor, Adolphus Pepple brings invaluable experience cultivated over a long and successful career. His strategic insight and deep understanding of financial principles are crucial in maintaining stability and guiding the company's financial direction, fostering sustainable growth and mitigating potential risks. Fluent in Italian, he also brings a global perspective to leadership, enhancing communication and relationship-building across international networks.</p>
                                 </div>
                                 <button type="button" class="flip-return">Return</button>
                             </div>
@@ -447,6 +416,72 @@
                     </div>
                 </div>
             </div>
+
+
+            <!-- David Alagoa -->
+            <div class="col-lg-3 col-md-6 team-pro">
+                <div class="team-flip-container">
+                    <div class="team-flip-inner">
+                        <!-- Front Side -->
+                        <div class="team-flip-front team-wrap">
+                            <div class="team-img">
+                                <img src="images/team/t-5.jpg" alt="David Alagoa" />
+                            </div>
+                            <div class="team-content">
+                                    <div class="team-info">
+                                    <h3>David Alagoa</h3>
+                                    <p>Head of Technology & Business Growth</p>
+                                    <span><button type="button" class="flip-profile">View Profile</button></span>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Back Side -->
+                        <div class="team-flip-back">
+                            <div class="back-content">
+                                <p class="position"> <h3>David Alogoa</h3> <h5>Head of Technology & Business Growth</h5></p>
+                                 <div class="bio">
+                                 <p>As Head of Technology & Business Growth, David Alagoa leverages deep IT expertise and strategic vision to propel business expansion. With extensive experience leading cross-functional teams, he excels at aligning technological innovation with organisational goals. His focus is on implementing cutting-edge technologies and organic strategies for sustainable growth, while fostering collaboration and high performance within the teams he leads.</p>
+                                </div>
+                                <button type="button" class="flip-return">Return</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- Eze Igwe -->
+            <div class="col-lg-3 col-md-6 team-pro pb-none">
+                <div class="team-flip-container">
+                    <div class="team-flip-inner">
+                        <!-- Front Side -->
+                        <div class="team-flip-front team-wrap">
+                            <div class="team-img">
+                                <img src="images/team/t-4.jpg" alt="Grace Ekoma" />
+                            </div>
+                            <div class="team-content">
+                                <div class="team-info">
+                                    <h3>Eze Igwe</h3>
+                                    <p>Multilingual Business Development Lead
+                                    </p>
+                                    <span><button type="button" class="flip-profile">View Profile</button></span>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Back Side -->
+                        <div class="team-flip-back">
+                            <div class="back-content">
+                                <p class="position"> <h3>Eze Igwe</h3> <h5>Multilingual Business Development Lead</h5></p>
+                                 <div class="bio">
+                                    <p>As Business Development & Multilingual Client Engagement Lead, Eze Nwigwe plays a vital role in driving growth and expanding the company's global footprint. A hands-on team member with a strong grasp of client needs and market dynamics, he combines business insight with linguistic fluency in English, Swedish, French, Norwegian, and Danish to build authentic relationships across borders. His proactive approach and cultural intelligence ensure seamless communication, fostering trust and unlocking new opportunities in diverse markets.</p>
+                                </div>
+                                <button type="button" class="flip-return">Return</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
 
             <!-- Grace Ekoma -->
             <div class="col-lg-3 col-md-6 team-pro pb-none">
@@ -468,10 +503,9 @@
                         <!-- Back Side -->
                         <div class="team-flip-back">
                             <div class="back-content">
-                                <h3>Grace Ekoma</h3>
-                                <p class="position">Operations & Client Relations Manager</p>
-                                <div class="bio">
-                                    <p>Grace Ekoma excels as Operations & Client Relations Manager, where she builds strong client relationships and maintains operational excellence. Her commitment to customer satisfaction makes her an invaluable asset to the team.</p>
+                                <p class="position"> <h3>Grace Ekoma</h3> <h5>Operations & Client Relations Manager</h5></p>
+                                 <div class="bio">
+                                    <p>Grace Ekoma excels as Operations & Client Relations Manager, where she builds strong client relationships and maintains operational excellence. A certified tax expert, she brings crucial financial insight to the team — ensuring compliance, improving financial efficiency, and offering informed guidance to clients on tax-related matters. Her dual focus on operational precision and customer satisfaction makes her an invaluable asset to the company</p>
                                 </div>
                                 <button type="button" class="flip-return">Return</button>
                             </div>
@@ -479,6 +513,7 @@
                     </div>
                 </div>
             </div>
+
 
             <!-- Sotonye Afiesimama-->
             <div class="col-lg-3 col-md-6 team-pro kat">
@@ -500,10 +535,9 @@
                         <!-- Back Side -->
                         <div class="team-flip-back">
                             <div class="back-content">
-                                <h3>Sotonye Afiesimama</h3>
-                                <p class="position">Founder & Managing Director</p>
+                               <p class="position"> <h3>Sotonye Afiesimama</h3> <h5>Founder & Managing Director</h5></p>
                                 <div class="bio">
-                                    <p>Sotonye Afiesimama, Founder & Managing Director, is the architect of the team and the driving force behind the company's success. As a visionary leader, he inspires action, fosters collaboration, and steers the company towards sustained growth and achievement.</p>
+                                    <p>Sotonye Afiesimama, Founder & Managing Director, is the architect of the team and the driving force behind the company's success. A visionary leader and neo-media expert — specialising in the intersection of traditional communication and emerging digital platforms — he brings a forward-thinking approach to content strategy, online engagement, and brand storytelling. His ability to harness trends across social media, digital advertising, and multimedia platforms ensures the company stays relevant, agile, and highly competitive in a fast-evolving digital landscape. He inspires action, fosters collaboration, and steers the company towards sustained growth and achievement.</p>
                                 </div>
                                 <button type="button" class="flip-return">Return</button>
                             </div>
@@ -516,121 +550,120 @@
 </section>
 
 <style>
-    /* Flip Card Styles */
-    .team-flip-container {
-        perspective: 1000px;
-        height: 180%;
-        margin-bottom: 30px;
-        position: relative;
-    }
-    
-    .team-flip-inner {
-        position: relative;
-        width: 100%;
-        height: 100%;
-        transition: transform 0.6s ease;
-        transform-style: preserve-3d;
-        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    }
-    
-    .team-flip-container.flipped .team-flip-inner {
-        transform: rotateY(180deg);
-    }
-    
-    .team-flip-front, .team-flip-back {
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        backface-visibility: hidden;
-        -webkit-backface-visibility: hidden;
-        top: 0;
-        left: 0;
-    }
-    
-    .team-flip-back {
-        background: #fff;
-        transform: rotateY(180deg);
-        padding: 20px;
-        display: flex;
-        flex-direction: column;
-        border-radius: 0;
-    }
-    
-    .back-content {
-        height: 100%;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        padding: 15px;
-    }
-    
-    .back-content h3 {
-        margin-bottom: 5px;
-        color: #274abb;
-    }
-    
-    .position {
-        color: #777;
-        margin-bottom: 15px;
-    }
-    
-    .bio {
-        margin-bottom: 20px;
-    }
-    
-    .flip-profile, .flip-return {
-        background: none;
-        border: none;
-        color: inherit;
-        padding: 0;
-        font: inherit;
-        cursor: pointer;
-        text-decoration: underline;
-        display: inline;
-    }
-    
-    .flip-return {
-        display: inline-block;
-        padding: 8px 20px;
-        background: #274abb;
-        color: white;
-        border-radius: 4px;
-        text-decoration: none;
-        transition: all 0.3s ease;
-    }
-    
-    .flip-return:hover {
-        background: #1a3490;
-    }
-    
-    .team-wrap {
-        height: 100%;
-        margin: 0;
-    }
+/* Replace your existing flip card styles with this */
+.team-flip-container {
+  perspective: 1000px;
+  height: 400px; /* Fixed height for all cards */
+  margin-bottom: 30px;
+  position: relative;
+}
 
-    
+.team-flip-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.6s ease;
+  transform-style: preserve-3d;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.team-flip-container.flipped .team-flip-inner {
+  transform: rotateY(180deg);
+}
+
+.team-flip-front, .team-flip-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  top: 0;
+  left: 0;
+  overflow: hidden; /* Prevent content overflow */
+}
+
+.team-flip-back {
+  background: #fff;
+  transform: rotateY(180deg);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  border-radius: 0;
+}
+
+.back-content {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto; /* Add scroll when content overflows */
+  padding: 15px;
+}
+
+.back-content {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+  padding: 15px;
+  position: relative; /* Needed for absolute positioning of button */
+}
+
+.position {
+  color: #777;
+  margin-bottom: 15px;
+  position: sticky;
+  top: 40px; /* Adjust based on your h3 height */
+  background: white;
+  padding-bottom: 10px;
+}
+
+.bio {
+  margin-bottom: 20px;
+  flex-grow: 1;
+  padding-top: 60px; /* Space for sticky headers */
+  margin-top: -60px; /* Pull content back up */
+}
+
+.flip-profile, .flip-return {
+  background: none;
+  border: none;
+  color: inherit;
+  padding: 0;
+  font: inherit;
+  cursor: pointer;
+  text-decoration: underline;
+  display: inline;
+}
+
+.flip-return {
+  display: block; /* Changed from inline-block */
+  width: calc(100% - 30px); /* Full width minus padding */
+  padding: 10px 0;
+  background: white;
+  color: #274abb;
+  border-radius: 4px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  text-align: center;
+  border: 2px solid #274abb;
+  margin: 15px auto 0; /* Centers horizontally and adds top margin */
+  position: relative; /* Changed from sticky */
+  bottom: 0;
+}
+
+.flip-return:hover {
+  background: #274abb;
+  color: white;
+}
+
+.team-wrap {
+  height: 100%;
+  margin: 0;
+}    
 </style>
 
 <script>
     document.addEventListener('DOMContentLoaded', function() {
-        // Set equal heights for all cards
-        function setEqualHeights() {
-            const cards = document.querySelectorAll('.team-flip-container');
-            let maxHeight = 0;
-            
-            // Reset heights first
-            cards.forEach(card => {
-                card.style.height = 'auto';
-                const frontHeight = card.querySelector('.team-flip-front').offsetHeight;
-                maxHeight = Math.max(maxHeight, frontHeight);
-            });
-            
-            // Apply max height
-            cards.forEach(card => {
-                card.style.height = `${maxHeight}px`;
-            });
-        }
-
         // Flip functionality
         document.querySelectorAll('.flip-profile, .flip-return').forEach(button => {
             button.addEventListener('click', function(e) {
@@ -641,9 +674,26 @@
             });
         });
 
+        // Set all cards to same height based on tallest front content
+        function normalizeCardHeights() {
+            const cards = document.querySelectorAll('.team-flip-front');
+            let maxHeight = 0;
+            
+            // Reset heights first
+            cards.forEach(card => {
+                card.style.height = 'auto';
+                maxHeight = Math.max(maxHeight, card.offsetHeight);
+            });
+            
+            // Apply max height to all containers
+            document.querySelectorAll('.team-flip-container').forEach(container => {
+                container.style.height = `${maxHeight}px`;
+            });
+        }
+
         // Initialize heights
-        setEqualHeights();
-        window.addEventListener('resize', setEqualHeights);
+        normalizeCardHeights();
+        window.addEventListener('resize', normalizeCardHeights);
     });
 </script>
 <!-- END SECTION AGENTS -->
@@ -796,77 +846,70 @@
         <a data-scroll href="#wrapper" class="go-up"><i class="fa fa-angle-double-up" aria-hidden="true"></i></a>
         <!-- END FOOTER -->
 
-        
-        <!--register modal form -->
-        <div class="login-and-register-form modal">
-            <div class="main-overlay"></div>
-            <div class="main-register-holder">
-                <div class="main-register fl-wrap">
-                    <div class="close-reg"><i class="fa fa-times"></i></div>
+     <!-- Firebase Login & Reset Modal -->
+<div class="login-and-register-form modal">
+    <div class="main-overlay"></div>
+    <div class="main-register-holder">
+        <div class="main-register fl-wrap">
+            <div class="close-reg"><i class="fa fa-times"></i></div>
 
-                    <h3 style="display: flex; align-items: center; gap: 10px;">
-                        <img src="images/eezylets logo.png" alt="Eezy Lets Logo" style="height: 60px; width: auto;">
-                        <span>Eezy <strong>Lets</strong></span> Team Only
-                    </h3>
-                    
-                   <!--<div class="soc-log fl-wrap">
-                        <p>Login</p>
-                        <a href="#" class="facebook-log"><i class="fa fa-facebook-official"></i>Log in with Facebook</a>
-                        <a href="#" class="twitter-log"><i class="fa fa-twitter"></i> Log in with Twitter</a>
-                    </div>
-                    <div class="log-separator fl-wrap"><span>Or</span></div>
-                    <div id="tabs-container">-->
-                        <ul class="tabs-menu">
-                            <li class="current"><a href="#tab-1">Login</a></li>
-                            <li><a href="#tab-2">Register</a></li>
-                        </ul>
-                        <div class="tab">
-                            <div id="tab-1" class="tab-contents">
-                                <div class="custom-form">
-                                    <form method="post" name="registerform">
-                                        <label>Username or Email Address * </label>
-                                        <input name="email" type="text" onClick="this.select()" value="">
-                                        <label>Password * </label>
-                                        <input name="password" type="password" onClick="this.select()" value="">
-                                        <button type="submit" class="log-submit-btn"><span>Log In</span></button>
-                                        <div class="clearfix"></div>
-                                        <div class="filter-tags">
-                                            <input id="check-a" type="checkbox" name="check">
-                                            <label for="check-a">Remember me</label>
-                                        </div>
-                                    </form>
-                                    <div class="lost_password">
-                                        <a href="#">Lost Your Password?</a>
-                                    </div>
-                                </div>
+            <h3 style="display: flex; align-items: center; gap: 10px;">
+                <img src="images/eezylets logo.png" alt="Eezy Lets Logo" style="height: 60px; width: auto;">
+                <span>Eezy <strong>Lets</strong></span> Team Only
+            </h3>
+
+            <ul class="tabs-menu">
+                <li class="current"><a href="#tab-1">Login</a></li>
+            </ul>
+
+            <div class="tab">
+                <!-- Login Tab -->
+                <div id="tab-1" class="tab-contents">
+                    <div class="custom-form">
+                        <form id="login-form">
+                            <div class="form-group">
+                                <label>Email</label>
+                                <input type="email" class="form-control" name="email" id="email" required>
+                                <i class="icon_mail_alt"></i>
                             </div>
-                            <div class="tab">
-                                <div id="tab-2" class="tab-contents">
-                                    <div class="custom-form">
-                                        <form method="post" name="registerform" class="main-register-form" id="main-register-form2">
-                                            <label>First Name * </label>
-                                            <input name="name" type="text" onClick="this.select()" value="">
-                                            <label>Second Name *</label>
-                                            <input name="name2" type="text" onClick="this.select()" value="">
-                                            <label>Email Address *</label>
-                                            <input name="email" type="text" onClick="this.select()" value="">
-                                            <label>Password *</label>
-                                            <input name="password" type="password" onClick="this.select()" value="">
-                                            <button type="submit" class="log-submit-btn"><span>Register</span></button>
-                                        </form>
-                                    </div>
-                                </div>
+                            <div class="form-group">
+                                <label>Password</label>
+                                <input type="password" class="form-control" name="password" id="password" required>
+                                <i class="icon_lock_alt"></i>
                             </div>
+                            <button type="submit" class="btn_1 rounded full-width">Login to Eezy Lets</button>
+                        </form>
+
+                        <div class="lost_password text-center mt-3">
+                            <a href="javascript:void(0);" id="forgot">Forgot Password?</a>
                         </div>
                     </div>
                 </div>
             </div>
+
+            <!-- Forgot Password Modal -->
+            <div id="forgot-password-modal" class="tab-contents" style="display:none;">
+                <div class="custom-form">
+                    <form id="forgot-password-form">
+                        <label>Email Address</label>
+                        <input type="email" class="form-control" id="reset-email" required>
+                        <button type="submit" class="btn_1 rounded full-width mt-3">Send Reset Link</button>
+                        <p id="forgot-password-message" class="mt-2" style="display:none;"></p>
+                        <div class="text-center mt-2">
+                            <a href="javascript:void(0);" id="back-to-login">Back to Login</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
         </div>
-        <!--register modal form end -->
+    </div>
+</div>
+
 
 
         <!-- ARCHIVES JS -->
         <script src="js/jquery-3.5.1.min.js"></script>
+        <script src="js/script.js"></script>
         <script src="js/tether.min.js"></script>
         <script src="js/popper.min.js"></script>
         <script src="js/bootstrap.min.js"></script>
@@ -958,7 +1001,13 @@
 
     </div>
     <!-- Wrapper / End -->
-     
+   
+    <!--Firebase Start-->
+
+<!-- Link to firebase-auth.js -->
+<script type="module" src="/js/firebase-auth.js"></script>
+
+<!--Firebase End-->
 </body>
 
 </html>

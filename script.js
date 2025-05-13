@@ -4,8 +4,6 @@ Template Name: Find Houses - HTML5 Template
 Version      : 1.0
 */
 
-console.log("Script.js is running on this page.");
-
 "use strict";
 
 jQuery(document).on('ready', function ($) {
@@ -19,80 +17,16 @@ jQuery(document).on('ready', function ($) {
     /*---------------------------------
      //------ ANIMATE HEADER ------//
      ----------------------------------*/
-
-    //$(document).ready(function () {
-       // console.log("Script.js loaded on: " + window.location.pathname);
-    
-        // Check if the current page is index.html (home page)
-    /*    if (window.location.pathname.includes("index.html") || window.location.pathname === "/") {
-            console.log("Home page detected. Sticky navbar script is disabled.");
-            return; // Exit script early to avoid duplication on home page
-        }
-    
     $(window).on('scroll', function () {
-            var sticky = $("#header-container"); // Target the header container
+        var sticky = $(".sticky-header");
         var scroll = $(window).scrollTop();
-    
-            console.log("Scroll position: " + scroll); // Debugging
-    
-            if (scroll > 50) {  // Change navbar when scrolling down 50px
-                if (!sticky.hasClass("sticky")) {
+        if (scroll < 265) {
+            sticky.removeClass("sticky");
+        } else {
             sticky.addClass("sticky");
-                    console.log("Sticky class added.");
-                }
-            } else {
-                if (sticky.hasClass("sticky")) {
-                    sticky.removeClass("sticky");
-                    console.log("Sticky class removed.");
-                }
         }
-    }); */
+    });
 
-/*---------------------------------
- //------ PRELOADER ------//
- ----------------------------------*/
- $('#status').fadeOut();
- $('#preloader').delay(200).fadeOut('slow');
- 
- /*---------------------------------
-  //------ MODAL ------//
-  ----------------------------------*/
- var modal = {};
- modal.hide = function () {
-     $('.modal').fadeOut();
-     $("html, body").removeClass("hid-body");
- };
- $('.modal-open').on("click", function (e) {
-     e.preventDefault();
-     $('.modal').fadeIn();
-     $("html, body").addClass("hid-body");
- });
- $('.close-reg').on("click", function () {
-     modal.hide();
- });
- 
- /*---------------------------------
-  //------ ANIMATE HEADER ------//
-  ----------------------------------*/
- // Only disable sticky header on homepage, not the entire script
- if (!(window.location.pathname.includes("index.html") || window.location.pathname === "/")) {
-     $(window).on('scroll', function () {
-         var sticky = $("#header-container");
-         var scroll = $(window).scrollTop();
- 
-         if (scroll > 50) {
-             if (!sticky.hasClass("sticky")) {
-                 sticky.addClass("sticky");
-             }
-         } else {
-             if (sticky.hasClass("sticky")) {
-                 sticky.removeClass("sticky");
-             }
-         }
-     });
- }
- 
- 
     /*---------------------------------
      //------ Rev Slider ------//
      ----------------------------------*/
@@ -412,6 +346,19 @@ jQuery(document).on('ready', function ($) {
         }
     });
 
+    /*----------------------------------
+    //------ MAGNIFIC POPUP ------//
+    -----------------------------------*/
+    $(document).ready(function () {
+        $('.popup-youtube, .popup-vimeo, .popup-gmaps').magnificPopup({
+            disableOn: 700,
+            type: 'iframe',
+            mainClass: 'mfp-fade',
+            removalDelay: 160,
+            preloader: false,
+            fixedContentPos: false
+        });
+    });
 
     /*----------------------------------------------
     //------ FILTER TOGGLE (ON GOOGLE MAPS) ------//

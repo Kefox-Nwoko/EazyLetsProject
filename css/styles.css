@@ -25125,3 +25125,37 @@ a.button.border, a.button {
   min-height: 300px !important; /* Adjust based on content */
 }
 
+/* Auth state visibility */
+.user-menu {
+  display: none;
+}
+
+.user-menu.active {
+  display: block;
+}
+
+.sign-in {
+  display: block;
+}
+
+.sign-in.hidden {
+  display: none;
+}
+
+/* Error/success messages */
+.auth-message {
+  padding: 10px;
+  margin: 10px 0;
+  border-radius: 4px;
+  text-align: center;
+}
+
+.auth-message.success {
+  background-color: #d4edda;
+  color: #155724;
+}
+
+.auth-message.error {
+  background-color: #f8d7da;
+  color: #721c24;
+}
