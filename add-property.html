@@ -7,7 +7,7 @@
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="description" content="html 5 template">
     <meta name="author" content="">
-    <title>Find Houses - HTML5 Template</title>
+    <title>Eezy-Lets Add Property</title>
     <!-- FAVICON -->
     <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
     <link rel="stylesheet" href="css/jquery-ui.css">
@@ -30,7 +30,7 @@
     <link rel="stylesheet" href="css/slick.css">
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" id="color" href="css/colors/darkblue.css">
-    <script type="module" src="/js/firebase-auth.js"></script>
+
 </head>
 
 <body class="inner-pages maxw1600 m0a dashboard-bd">
@@ -54,7 +54,7 @@
                             <div class="mmenu-trigger">
                                 <button class="hamburger hamburger--collapse" type="button">
                                     <span class="hamburger-box">
-							<span class="hamburger-inner"></span>
+                                        <span class="hamburger-inner"></span>
                                     </span>
                                 </button>
                             </div>
@@ -91,7 +91,7 @@
                                 <li><a href="add-property.html"> Add Property</a></li>
                                 <li><a href="payment-method.html">  Payments</a></li>
                                 <li><a href="change-password.html"> Change Password</a></li>
-                                <li><a href="#">Log Out</a></li>
+                                <li><a href="#" onclick="logout()">Log Out</a></li>
                             </ul>
                         </div>
                         <!-- Right Side Content / End -->
@@ -159,7 +159,7 @@
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="index.html">
+                                        <a href="#" onclick="logout()">
                                             <i class="fas fa-sign-out-alt"></i>Log Out
                                         </a>
                                     </li>
@@ -214,7 +214,7 @@
                                             </a>
                                         </li>
                                         <li>
-                                            <a href="index.html">
+                                            <a href="#" onclick="logout()">
                                                 <i class="fas fa-sign-out-alt mr-3"></i>Log Out
                                             </a>
                                         </li>
@@ -225,12 +225,12 @@
                         <div class="single-add-property">
                             <h3>Property description and price</h3>
                             <div class="property-form-group">
-                                <form>
+                                <form id="propertyForm">
                                     <div class="row">
                                         <div class="col-md-12">
                                             <p>
                                                 <label for="title">Property Title</label>
-                                                <input type="text" name="title" id="title" placeholder="Enter your property title">
+                                                <input type="text" name="title" id="title" placeholder="Enter your property title" required>
                                             </p>
                                         </div>
                                     </div>
@@ -238,7 +238,7 @@
                                         <div class="col-md-12">
                                             <p>
                                                 <label for="description">Property Description</label>
-                                                <textarea id="description" name="pro-dexc" placeholder="Describe about your property"></textarea>
+                                                <textarea id="description" name="pro-dexc" placeholder="Describe about your property" required></textarea>
                                             </p>
                                         </div>
                                     </div>
@@ -284,16 +284,18 @@
                                         <div class="col-lg-6 col-md-12">
                                             <p class="no-mb">
                                                 <label for="price">Price</label>
-                                                <input type="text" name="price" placeholder="USD" id="price">
+                                                <input type="text" name="price" placeholder="USD" id="price" required>
                                             </p>
                                         </div>
                                         <div class="col-lg-6 col-md-12">
                                             <p class="no-mb last">
                                                 <label for="area">Area</label>
-                                                <input type="text" name="area" placeholder="Sqft" id="area">
+                                                <input type="text" name="area" placeholder="Sqft" id="area" required>
                                             </p>
                                         </div>
                                     </div>
+                                    <input type="hidden" id="userId" name="userId">
+                                    <input type="hidden" id="timestamp" name="timestamp">
                                 </form>
                             </div>
                         </div>
@@ -314,13 +316,13 @@
                                     <div class="col-lg-6 col-md-12">
                                         <p>
                                             <label for="address">Address</label>
-                                            <input type="text" name="address" placeholder="Enter Your Address" id="address">
+                                            <input type="text" name="address" placeholder="Enter Your Address" id="address" required>
                                         </p>
                                     </div>
                                     <div class="col-lg-6 col-md-12">
                                         <p>
                                             <label for="city">City</label>
-                                            <input type="text" name="city" placeholder="Enter Your City" id="city">
+                                            <input type="text" name="city" placeholder="Enter Your City" id="city" required>
                                         </p>
                                     </div>
                                 </div>
@@ -328,13 +330,13 @@
                                     <div class="col-lg-6 col-md-12">
                                         <p>
                                             <label for="state">State</label>
-                                            <input type="text" name="state" placeholder="Enter Your State" id="state">
+                                            <input type="text" name="state" placeholder="Enter Your State" id="state" required>
                                         </p>
                                     </div>
                                     <div class="col-lg-6 col-md-12">
                                         <p>
                                             <label for="country">Country</label>
-                                            <input type="text" name="country" placeholder="Enter Your Country" id="country">
+                                            <input type="text" name="country" placeholder="Enter Your Country" id="country" required>
                                         </p>
                                     </div>
                                 </div>
@@ -502,13 +504,13 @@
                                     <div class="col-lg-6 col-md-12">
                                         <p>
                                             <label for="con-name">Name</label>
-                                            <input type="text" placeholder="Enter Your Name" id="con-name" name="con-name">
+                                            <input type="text" placeholder="Enter Your Name" id="con-name" name="con-name" required>
                                         </p>
                                     </div>
                                     <div class="col-lg-6 col-md-12">
                                         <p>
                                             <label for="con-user">Username</label>
-                                            <input type="text" placeholder="Enter Your Username" id="con-user" name="con-user">
+                                            <input type="text" placeholder="Enter Your Username" id="con-user" name="con-user" required>
                                         </p>
                                     </div>
                                 </div>
@@ -516,13 +518,13 @@
                                     <div class="col-lg-6 col-md-12">
                                         <p class="no-mb first">
                                             <label for="con-email">Email</label>
-                                            <input type="email" placeholder="Enter Your Email" id="con-email" name="con-email">
+                                            <input type="email" placeholder="Enter Your Email" id="con-email" name="con-email" required>
                                         </p>
                                     </div>
                                     <div class="col-lg-6 col-md-12">
                                         <p class="no-mb last">
                                             <label for="con-phn">Phone</label>
-                                            <input type="text" placeholder="Enter Your Phone Number" id="con-phn" name="con-phn">
+                                            <input type="text" placeholder="Enter Your Phone Number" id="con-phn" name="con-phn" required>
                                         </p>
                                     </div>
                                 </div>
@@ -531,7 +533,7 @@
                                 <div class="row">
                                     <div class="col-md-12">
                                         <div class="prperty-submit-button">
-                                            <button type="submit">Submit Property</button>
+                                            <button type="button" onclick="submitProperty()">Submit Property</button>
                                         </div>
                                     </div>
                                 </div>
@@ -595,26 +597,163 @@
         <script src="js/dashbord-mobile-menu.js"></script>
         <script src="js/forms-2.js"></script>
         <script src="js/color-switcher.js"></script>
-        <script src="js/dropzone.js"></script>
+        <!--<script src="js/dropzone.js"></script>-->
+
+        <!-- Firebase Integration -->
+        <script type="module">
+            // Import Firebase modules
+            import { getAuth, onAuthStateChanged } from 'https://www.gstatic.com/firebasejs/9.6.0/firebase-auth.js';
+            import { getFirestore, collection, addDoc, serverTimestamp } from 'https://www.gstatic.com/firebasejs/9.6.0/firebase-firestore.js';
+            import { initializeApp } from 'https://www.gstatic.com/firebasejs/9.6.0/firebase-app.js';
+            import { getStorage, ref, uploadBytes, getDownloadURL } from 'https://www.gstatic.com/firebasejs/9.6.0/firebase-storage.js';
+            
+            // Your Firebase configuration (REPLACE WITH YOUR ACTUAL CONFIG)
+            const firebaseConfig = {
+            apiKey: "AIzaSyDNeMjhAZ0Jn-2AHAWcV4RUQbsTnhkMhBk",
+            authDomain: "eezy-lets.firebaseapp.com",
+            projectId: "eezy-lets",
+            storageBucket: "eezy-lets.firebasestorage.app",
+            messagingSenderId: "616871576454",
+            appId: "1:616871576454:web:ca03c975a3139852f1e207",
+            measurementId: "G-XT2RR1Q26W"
+            };
+            
+            // Initialize Firebase
+            const app = initializeApp(firebaseConfig);
+            const auth = getAuth(app);
+            const db = getFirestore(app);
+            const storage = getStorage(app);
+            
+            // Set user ID when page loads
+            onAuthStateChanged(auth, (user) => {
+                if (user) {
+                    document.getElementById('userId').value = user.uid;
+                } else {
+                    // Redirect to login if not authenticated
+                    window.location.href = 'login.html';
+                }
+            });
+            
+            // Function to handle property submission
+            window.submitProperty = async function() {
+                try {
+                    // Validate form
+                    if (!validateForm()) {
+                        return;
+                    }
+                    
+                    // Get form data
+                    const propertyData = {
+                        title: document.getElementById('title').value,
+                        description: document.getElementById('description').value,
+                        status: document.querySelector('.nice-select.form-control.wide .current').textContent,
+                        type: document.querySelectorAll('.nice-select.form-control.wide')[1].querySelector('.current').textContent,
+                        rooms: document.querySelectorAll('.nice-select.form-control.wide')[2].querySelector('.current').textContent,
+                        price: document.getElementById('price').value,
+                        area: document.getElementById('area').value,
+                        address: document.getElementById('address').value,
+                        city: document.getElementById('city').value,
+                        state: document.getElementById('state').value,
+                        country: document.getElementById('country').value,
+                        latitude: document.getElementById('latitude').value,
+                        longitude: document.getElementById('longitude').value,
+                        age: document.querySelectorAll('.nice-select.form-control.wide')[3].querySelector('.current').textContent,
+                        bedrooms: document.querySelectorAll('.nice-select.form-control.wide')[4].querySelector('.current').textContent,
+                        bathrooms: document.querySelectorAll('.nice-select.form-control.wide')[5].querySelector('.current').textContent,
+                        features: getSelectedFeatures(),
+                        contactName: document.getElementById('con-name').value,
+                        contactEmail: document.getElementById('con-email').value,
+                        contactPhone: document.getElementById('con-phn').value,
+                        userId: document.getElementById('userId').value,
+                        timestamp: serverTimestamp(),
+                        images: await uploadImages()
+                    };
+                    
+                    // Add property to Firestore
+                    const docRef = await addDoc(collection(db, "properties"), propertyData);
+                    console.log("Property added with ID: ", docRef.id);
+                    
+                    alert("Property submitted successfully!");
+                    window.location.href = "my-listings.html";
+                } catch (error) {
+                    console.error("Error adding property: ", error);
+                    alert("Error submitting property: " + error.message);
+                }
+            };
+            
+            // Helper function to get selected features
+            function getSelectedFeatures() {
+                const features = [];
+                document.querySelectorAll('.pro-feature-add input[type="checkbox"]:checked').forEach(checkbox => {
+                    features.push(checkbox.nextElementSibling.textContent);
+                });
+                return features;
+            }
+            
+            // Function to validate form
+            function validateForm() {
+                const requiredFields = [
+                    'title', 'description', 'price', 'area', 
+                    'address', 'city', 'state', 'country',
+                    'con-name', 'con-email', 'con-phn'
+                ];
+                
+                for (const fieldId of requiredFields) {
+                    const field = document.getElementById(fieldId);
+                    if (!field.value.trim()) {
+                        alert(`Please fill in the ${field.placeholder || field.name} field`);
+                        field.focus();
+                        return false;
+                    }
+                }
+                return true;
+            }
+            
+            // Function to handle image uploads
+            async function uploadImages() {
+                const imageUrls = [];
+                const dropzoneFiles = document.querySelector('.dropzone').dropzone.files;
+                
+                if (dropzoneFiles && dropzoneFiles.length > 0) {
+                    for (const file of dropzoneFiles) {
+                        try {
+                            const storageRef = ref(storage, `properties/${Date.now()}_${file.name}`);
+                            await uploadBytes(storageRef, file);
+                            const downloadURL = await getDownloadURL(storageRef);
+                            imageUrls.push(downloadURL);
+                        } catch (error) {
+                            console.error("Error uploading image: ", error);
+                        }
+                    }
+                }
+                return imageUrls;
+            }
+            
+            // Initialize Dropzone
+            $(document).ready(function() {
+                $(".dropzone").dropzone({
+                    dictDefaultMessage: "<i class='fa fa-cloud-upload'></i> Click here or drop files to upload",
+                    acceptedFiles: "image/*",
+                    maxFiles: 10,
+                    maxFilesize: 5, // MB
+                    addRemoveLinks: true
+                });
+            });
+            
+            // Logout function
+            window.logout = async function() {
+                try {
+                    await signOut(auth);
+                    window.location.href = "index.html";
+                } catch (error) {
+                    console.error("Error signing out: ", error);
+                }
+            };
+        </script>
 
         <!-- MAIN JS -->
         <script src="js/script.js"></script>
-        <script>
-            $(".dropzone").dropzone({
-                dictDefaultMessage: "<i class='fa fa-cloud-upload'></i> Click here or drop files to upload",
-            });
-
-        </script>
-        <script>
-            $(".header-user-name").on("click", function() {
-                $(".header-user-menu ul").toggleClass("hu-menu-vis");
-                $(this).toggleClass("hu-menu-visdec");
-            });
-
-        </script>
-
     </div>
     <!-- Wrapper / End -->
 </body>
-
 </html>

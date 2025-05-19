@@ -5513,19 +5513,19 @@ element.style {
 }
 
 .login-and-register-form .main-register-holder {
-  max-width: 480px;
-  margin: 100px auto 50px;
+  max-width: 450px;
+  margin: 30px auto 30px;
   position: relative;
   z-index: 5;
 }
 
 .login-and-register-form .main-register h3 {
   float: left;
-  width: 100%;
+  width: 90%;
   text-align: left;
   font-size: 20px;
   padding: 20px 30px;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
   font-weight: 600;
   color: #444;
   border-bottom: 1px solid #eee;
